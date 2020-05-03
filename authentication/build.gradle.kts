@@ -1,8 +1,7 @@
 plugins {
-    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.androidLibrary)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinAndroidExtensions)
-    id(BuildPlugins.googleGsmServices)
 }
 
 android {
@@ -10,7 +9,6 @@ android {
     buildToolsVersion(AndroidVersion.buildTools)
 
     defaultConfig {
-        applicationId = AppConfig.applicationId
         minSdkVersion(AndroidVersion.minSdk)
         targetSdkVersion(AndroidVersion.targetSdk)
         versionCode = AndroidVersion.versionCode
@@ -20,24 +18,13 @@ android {
     buildTypes {
         getByName(AppConfig.release) {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 }
 
 dependencies {
-    implementation(Libraries.appCompat)
-
-    implementation(Libraries.constraintLayout)
-    implementation(Libraries.countdownTimer)
-
-    implementation(Libraries.firebaseAnalytics)
     implementation(Libraries.firebaseAuth)
-    implementation(Libraries.firebaseFirestore)
-    implementation(Libraries.firebaseUiAuth)
 
     implementation(Libraries.koinCore)
     implementation(Libraries.koinExt)
@@ -48,14 +35,5 @@ dependencies {
     implementation(Libraries.kotlinCoroutinesAndroid)
     implementation(Libraries.kotlinCoroutinesIntegration)
 
-    implementation(Libraries.materialComponents)
-    implementation(Libraries.mpChart)
-
-    implementation(Libraries.recyclerView)
-
-    implementation(Libraries.viewModel)
-
-    implementation(project(Module.authentication))
-    implementation(project(Module.datasource))
     implementation(project(Module.utils))
 }

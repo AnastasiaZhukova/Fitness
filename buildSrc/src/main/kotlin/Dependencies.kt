@@ -48,6 +48,7 @@ object Libraries {
 }
 
 object Module {
+    const val authentication = ":authentication"
     const val datasource = ":datasource"
     const val utils = ":utils"
 }
