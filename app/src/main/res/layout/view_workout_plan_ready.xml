@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppRoundedCardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="com.google.android.material.card.MaterialCardView">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_workout_ready_background"
+            app:layout_constraintBottom_toTopOf="@id/container"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image">
+
+            <View
+                android:id="@+id/shadow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0.75"
+                android:background="@drawable/ic_rounded_shadow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sectionLabel"
+                style="@style/SectionLabelTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/defaultMargin"
+                android:text="@string/workout_section_label"
+                android:textColor="@color/lightText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/workoutDuration"
+                style="@style/WorkoutLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data_label"
+                android:textColor="@color/lightText"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@id/workoutCalories"
+                app:layout_constraintEnd_toEndOf="@id/sectionLabel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/sectionLabel"
+                app:layout_constraintTop_toBottomOf="@id/sectionLabel"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Duration - 24 min" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/workoutCalories"
+                style="@style/WorkoutLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data_label"
+                android:textColor="@color/lightText"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/workoutLevel"
+                app:layout_constraintEnd_toEndOf="@id/sectionLabel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/sectionLabel"
+                app:layout_constraintTop_toBottomOf="@id/workoutDuration"
+                tools:text="Calories - 314 cal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/workoutLevel"
+                style="@style/WorkoutLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data_label"
+                android:textColor="@color/lightText"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/startButton"
+                app:layout_constraintEnd_toEndOf="@id/sectionLabel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/sectionLabel"
+                app:layout_constraintTop_toBottomOf="@id/workoutCalories"
+                tools:text="Level - Hard" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/defaultMargin"
+                android:backgroundTint="@color/secondary"
+                android:text="@string/workout_ready_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/sectionLabel"
+                app:layout_constraintStart_toStartOf="@id/sectionLabel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

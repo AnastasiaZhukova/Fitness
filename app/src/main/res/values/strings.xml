@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Fitness</string>
+
+    <string name="workout_section_label">Your today\'s workout</string>
+    <string name="workout_duration_label">Duration - %d min</string>
+    <string name="workout_calories_label">Calories - %d cal</string>
+    <string name="workout_level_label">Level - %s</string>
+    <string name="workout_break_text">Nice job! Take a break!</string>
+    <string name="workout_break_text_with_param">Next workout is on %s</string>
+    <string name="workout_ready_text">Start</string>
+
+    <string name="my_goal_section_label">My goal</string>
+    <string name="weight_label">Weight</string>
+    <string name="calories_label">Calories</string>
+    <string name="water_label">Water</string>
+
+    <string name="my_food_section_label">My food</string>
+    <string name="my_food_section_add">Add</string>
+    <string name="my_food_section_view">View</string>
+
+
+    <string name="my_water_section_label">My water</string>
+    <string name="my_water_section_add">Add</string>
+    <string name="my_water_section_view">View</string>
+
+    <string name="statistics_today_label">Today</string>
+    <string name="statistics_general_label">General</string>
+
+    <string name="menu_water">Water</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_home">Dashboard</string>
+    <string name="menu_calories">Calories</string>
+
+    <string name="no_data_label">-</string>
+    <string name="authentication_email">E-mail</string>
+    <string name="authentication_password">Password</string>
+    <string name="authentication_repeat_password">Repeat password</string>
+    <string name="authentication_login">Login</string>
+    <string name="authentication_register">Register</string>
+    <string name="authentication_no_account">Have no account? Register now.</string>
+    <string name="authentication_have_account">Have account? Login now.</string>
+
+    <string name="edit_user_info_name">Name</string>
+    <string name="edit_user_save">Save</string>
+    <string name="elements_list_add_button">Add</string>
+
+    <string name="add_water_entry_dialog_title">Add entry</string>
+    <string name="add_water_entry_dialog_amount_hint">Amount (ml)</string>
+    <string name="add_water_entry_dialog_save">Save</string>
+    <string name="add_water_entry_dialog_cancel">Cancel</string>
+
+    <string name="add_calories_entry_dialog_title">Add entry</string>
+    <string name="add_calories_entry_dialog_name_hint">Name</string>
+    <string name="add_calories_entry_dialog_weight_hint">Amount (g)</string>
+    <string name="add_calories_entry_dialog_calories_hint">Calories (per 100 g)</string>
+    <string name="add_calories_entry_dialog_save">Save</string>
+    <string name="add_calories_entry_dialog_cancel">Cancel</string>
+
+    <string name="workout_pause">Pause</string>
+    <string name="workout_resume">Resume</string>
+    <string name="workout_finish">Finish</string>
+
+</resources>

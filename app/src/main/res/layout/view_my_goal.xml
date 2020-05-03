@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="com.google.android.material.card.MaterialCardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/myGoalLabel"
+            style="@style/SectionLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/defaultMargin"
+            android:text="@string/my_goal_section_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/weightLabel"
+            style="@style/AppMediumGreyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:text="@string/weight_label"
+            app:layout_constraintBottom_toTopOf="@id/weightText"
+            app:layout_constraintEnd_toEndOf="@id/weightText"
+            app:layout_constraintStart_toStartOf="@id/weightText"
+            app:layout_constraintTop_toBottomOf="@id/myGoalLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/caloriesLabel"
+            style="@style/AppMediumGreyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calories_label"
+            app:layout_constraintBottom_toBottomOf="@id/weightLabel"
+            app:layout_constraintEnd_toEndOf="@id/caloriesText"
+            app:layout_constraintStart_toStartOf="@id/caloriesText"
+            app:layout_constraintTop_toTopOf="@id/weightLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/waterLabel"
+            style="@style/AppMediumGreyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/water_label"
+            app:layout_constraintBottom_toBottomOf="@id/caloriesLabel"
+            app:layout_constraintEnd_toEndOf="@id/waterText"
+            app:layout_constraintStart_toStartOf="@id/waterText"
+            app:layout_constraintTop_toTopOf="@id/caloriesLabel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/weightText"
+            style="@style/GoalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:text="@string/no_data_label"
+            app:layout_constraintBottom_toTopOf="@id/changeGoalButton"
+            app:layout_constraintEnd_toStartOf="@id/caloriesText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weightLabel"
+            tools:text="55kg" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/caloriesText"
+            style="@style/GoalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:text="@string/no_data_label"
+            app:layout_constraintBaseline_toBaselineOf="@id/weightText"
+            app:layout_constraintBottom_toBottomOf="@id/weightText"
+            app:layout_constraintEnd_toStartOf="@id/waterText"
+            app:layout_constraintStart_toEndOf="@id/weightText"
+            app:layout_constraintTop_toTopOf="@id/weightText"
+            tools:text="1220" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/waterText"
+            style="@style/GoalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:text="@string/no_data_label"
+            app:layout_constraintBaseline_toBaselineOf="@id/caloriesText"
+            app:layout_constraintBottom_toBottomOf="@id/caloriesText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/caloriesText"
+            app:layout_constraintTop_toTopOf="@id/caloriesText"
+            tools:text="1500" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/changeGoalButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defaultMargin"
+            android:layout_marginEnd="@dimen/defaultMargin"
+            android:text="Change your goal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weightText"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

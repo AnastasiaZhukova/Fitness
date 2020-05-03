@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_water"
+        android:enabled="true"
+        android:icon="@drawable/ic_cup"
+        android:title="@string/menu_water" />
+    <item
+        android:id="@+id/menu_calories"
+        android:enabled="true"
+        android:icon="@drawable/ic_dining"
+        android:title="@string/menu_calories" />
+    <item
+        android:id="@+id/menu_dashboard"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/menu_statistics"
+        android:enabled="true"
+        android:icon="@drawable/ic_statistics"
+        android:title="@string/menu_statistics" />
+</menu>

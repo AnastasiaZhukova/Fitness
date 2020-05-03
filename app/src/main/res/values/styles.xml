@@ -1,0 +1,104 @@
+<resources>
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorSurface">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">8dp</item>
+    </style>
+
+    <style name="AppRoundedCardView" parent="AppCardView">
+        <item name="cardCornerRadius">15dp</item>
+    </style>
+
+    <style name="AppSmallTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppMediumTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppLargeTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="AppExtraLargeTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppSmallDarkTextView" parent="AppSmallTextView">
+        <item name="android:textColor">@color/darkText</item>
+    </style>
+
+    <style name="AppMediumDarkTextView" parent="AppMediumTextView">
+        <item name="android:textColor">@color/darkText</item>
+    </style>
+
+    <style name="AppLargeDarkTextView" parent="AppLargeTextView">
+        <item name="android:textColor">@color/darkText</item>
+    </style>
+
+    <style name="AppMediumGreyTextView" parent="AppMediumTextView">
+        <item name="android:textColor">@color/mediumText</item>
+    </style>
+
+    <style name="AppSmallLightTextView" parent="AppSmallTextView">
+        <item name="android:textColor">@color/lightText</item>
+    </style>
+
+    <style name="RatingTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">56sp</item>
+        <item name="android:textColor">@color/lightText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppExtraLargeSecondaryTextView" parent="AppExtraLargeTextView">
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="SectionLabelTextView" parent="AppExtraLargeTextView">
+        <item name="android:textColor">@color/darkText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="WorkoutLabelTextView" parent="AppSmallDarkTextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="GoalTextView" parent="AppExtraLargeSecondaryTextView">
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AuthenticationTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="startIconTint">@color/primary</item>
+        <item name="endIconTint">@color/primary</item>
+    </style>
+
+    <style name="EditUserInfoTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="startIconTint">@color/primary</item>
+    </style>
+
+    <style name="EditUserLabelText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditUserInfoText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/darkText</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

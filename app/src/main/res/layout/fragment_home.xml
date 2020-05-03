@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/userButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:layout_marginEnd="@dimen/defaultMargin"
+            android:background="@drawable/ic_user_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.anastasiazhukova.fitness.ui.views.WorkoutCardView
+            android:id="@+id/workoutCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/defaultMargin"
+            app:layout_constraintBottom_toTopOf="@id/todayRatingCounter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userButton" />
+
+        <com.github.anastasiazhukova.fitness.ui.views.RatingCardView
+            android:id="@+id/todayRatingCounter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/myGoalCard"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginEnd="@dimen/defaultMargin"
+            app:layout_constraintEnd_toStartOf="@id/generalRatingCounter"
+            app:layout_constraintStart_toStartOf="@id/workoutCard"
+            app:layout_constraintTop_toBottomOf="@id/workoutCard" />
+
+        <com.github.anastasiazhukova.fitness.ui.views.RatingCardView
+            android:id="@+id/generalRatingCounter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/todayRatingCounter"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/workoutCard"
+            app:layout_constraintStart_toEndOf="@id/todayRatingCounter"
+            app:layout_constraintTop_toTopOf="@id/todayRatingCounter" />
+
+        <com.github.anastasiazhukova.fitness.ui.views.MyGoalCardView
+            android:id="@+id/myGoalCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/workoutCard"
+            app:layout_constraintStart_toStartOf="@id/workoutCard"
+            app:layout_constraintTop_toBottomOf="@id/todayRatingCounter" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
