@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.anastasiazhukova.fitness.ui.views.DatePickerView
+    <com.github.anastasiazhukova.fitness.uicomponents.DatePickerView
         android:id="@+id/datePicker"
         style="@style/AppRoundedCardView"
         android:layout_width="0dp"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.github.anastasiazhukova.fitness.ui.views.ElementsListView
+    <com.github.anastasiazhukova.fitness.uicomponents.ElementsListView
         android:id="@+id/elementsView"
         style="@style/AppRoundedCardView"
         android:layout_width="match_parent"

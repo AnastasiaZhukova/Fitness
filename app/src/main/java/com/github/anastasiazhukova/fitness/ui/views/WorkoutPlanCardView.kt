@@ -6,11 +6,8 @@ import android.view.View
 import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.google.android.material.card.MaterialCardView
-import kotlinx.android.synthetic.main.view_workout_break.view.*
+import kotlinx.android.synthetic.main.view_workout_plan_break.view.*
 import kotlinx.android.synthetic.main.view_workout_plan_ready.view.*
-import kotlinx.android.synthetic.main.view_workout_ready.view.*
-import kotlinx.android.synthetic.main.view_workout_ready.view.workoutCalories
-import kotlinx.android.synthetic.main.view_workout_ready.view.workoutDuration
 
 class WorkoutPlanCardView @JvmOverloads constructor(
     context: Context,

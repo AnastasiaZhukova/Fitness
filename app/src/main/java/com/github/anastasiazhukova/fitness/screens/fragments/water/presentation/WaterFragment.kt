@@ -12,9 +12,9 @@ import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterEntry
 import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModel
 import com.github.anastasiazhukova.fitness.screens.fragments.water.viewmodel.WaterViewModel
-import com.github.anastasiazhukova.fitness.ui.views.IDatePickerListener
-import com.github.anastasiazhukova.fitness.ui.views.IDatePickerSupport
-import com.github.anastasiazhukova.fitness.ui.views.IElementsListListener
+import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerListener
+import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerSupport
+import com.github.anastasiazhukova.fitness.uicomponents.IElementsListListener
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.visible
 import kotlinx.android.synthetic.main.fragment_water.*

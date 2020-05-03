@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_clients"
+        android:enabled="true"
+        android:icon="@drawable/ic_people"
+        android:title="@string/menu_clients" />
+    <item
+        android:id="@+id/menu_exercises"
+        android:enabled="true"
+        android:icon="@drawable/ic_exercise"
+        android:title="@string/menu_exercises" />
+</menu>

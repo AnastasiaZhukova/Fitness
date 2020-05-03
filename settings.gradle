@@ -3,6 +3,7 @@ include ':fitnessadmin'
 
 include ':authentication'
 include ':datasource'
+include ':uiComponents'
 include ':utils'
 
 rootProject.name = "Fitness"

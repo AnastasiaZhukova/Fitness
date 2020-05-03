@@ -33,10 +33,6 @@
         <activity
             android:name=".screens.activities.workout.presentation.WorkoutActivity"
             android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".screens.activities.onboarding.OnBoardingActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

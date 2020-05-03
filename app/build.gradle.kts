@@ -57,5 +57,6 @@ dependencies {
 
     implementation(project(Module.authentication))
     implementation(project(Module.datasource))
+    implementation(project(Module.uiComponents))
     implementation(project(Module.utils))
 }

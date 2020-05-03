@@ -9,8 +9,6 @@ import com.github.anastasiazhukova.fitness.screens.fragments.calories.CaloriesSc
 import com.github.anastasiazhukova.fitness.screens.fragments.statistics.StatisticsScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.water.WaterScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.WorkoutPlanScreenDependency
-import com.github.anastasiazhukova.fitness.screens.fragments.zold.dashboard.DashboardScreenDependency
-import com.github.anastasiazhukova.fitness.screens.fragments.zold.food.FoodScreenDependency
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -30,10 +28,7 @@ class MainApplication : Application() {
                 WorkoutPlanScreenDependency.module,
                 StatisticsScreenDependency.module,
 
-
                 DatasourceDependency.module,
-                DashboardScreenDependency.module,
-                FoodScreenDependency.module,
                 WorkoutScreenDependency.module
             )
         }
