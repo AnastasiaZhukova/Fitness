@@ -46,3 +46,8 @@ object Libraries {
 
     const val viewModel = "androidx.lifecycle:lifecycle-extensions:${Version.viewModel}"
 }
+
+object Module {
+    const val datasource = ":datasource"
+    const val utils = ":utils"
+}

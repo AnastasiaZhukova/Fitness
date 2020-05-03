@@ -9,9 +9,9 @@ class CaloriesDataModelMapper : IMapper<CaloriesDataModel, CaloriesModel?> {
             if (entry.id.isNotEmpty() && !entry.name.isNullOrEmpty() && entry.calories != null && entry.weight != null) {
                 CaloriesEntry(
                     entry.id,
-                    entry.name,
-                    entry.calories,
-                    entry.weight
+                    entry.name!!,
+                    entry.calories!!,
+                    entry.weight!!
                 )
             } else {
                 null
@@ -21,7 +21,7 @@ class CaloriesDataModelMapper : IMapper<CaloriesDataModel, CaloriesModel?> {
         return if (data.id.isNotEmpty() && data.date != null) {
             CaloriesModel(
                 id = data.id,
-                date = data.date,
+                date = data.date!!,
                 entries = caloriesEntries
             )
         } else {

@@ -9,7 +9,7 @@ class WorkoutPlanDataModelMapper : IMapper<WorkoutPlanDataModel, WorkoutPlanMode
             if (entry.id.isNotEmpty() && entry.time != null) {
                 ExerciseEntry(
                     id = entry.id,
-                    time = entry.time,
+                    time = entry.time!!,
                     comments = entry.comments
                 )
             } else {
@@ -20,7 +20,7 @@ class WorkoutPlanDataModelMapper : IMapper<WorkoutPlanDataModel, WorkoutPlanMode
         return if (data.id.isNotEmpty() && data.date != null) {
             WorkoutPlanModel(
                 id = data.id,
-                date = data.date,
+                date = data.date!!,
                 preview = data.preview,
                 duration = data.duration,
                 calories = data.calories,

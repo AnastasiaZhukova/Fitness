@@ -1,2 +1,7 @@
 include ':app'
+include ':fitnessadmin'
+
+include ':utils'
+include ':datasource'
+
 rootProject.name = "Fitness"

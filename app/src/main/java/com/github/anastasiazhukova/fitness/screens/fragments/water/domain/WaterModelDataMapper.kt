@@ -4,7 +4,8 @@ import com.github.anastasiazhukova.fitness.datasource.user.water.WaterDataModel
 import com.github.anastasiazhukova.fitness.datasource.user.water.WaterEntryDataModel
 import com.github.anastasiazhukova.fitness.utils.IMapper
 
-class WaterModelDataMapper : IMapper<WaterModel, WaterDataModel> {
+class WaterModelDataMapper :
+    IMapper<WaterModel, WaterDataModel> {
     override fun invoke(waterModel: WaterModel): WaterDataModel {
         val waterEntriesData = waterModel.entries.map { entry ->
             WaterEntryDataModel(

@@ -10,7 +10,7 @@ android {
     buildToolsVersion(AndroidVersion.buildTools)
 
     defaultConfig {
-        applicationId = AppConfig.applicationId
+        applicationId = AppConfig.adminApplicationId
         minSdkVersion(AndroidVersion.minSdk)
         targetSdkVersion(AndroidVersion.targetSdk)
         versionCode = AndroidVersion.versionCode
@@ -20,10 +20,7 @@ android {
     buildTypes {
         getByName(AppConfig.release) {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 }
@@ -52,9 +49,6 @@ dependencies {
     implementation(Libraries.mpChart)
 
     implementation(Libraries.recyclerView)
-
+    
     implementation(Libraries.viewModel)
-
-    implementation(project(Module.datasource))
-    implementation(project(Module.utils))
 }
