@@ -34,5 +34,7 @@ dependencies {
 
     implementation(Libraries.recyclerView)
 
+    implementation(Libraries.viewModelLifecycle)
+
     implementation(project(Module.utils))
 }

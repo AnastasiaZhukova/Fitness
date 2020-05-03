@@ -44,7 +44,8 @@ object Libraries {
 
     const val recyclerView = "androidx.recyclerview:recyclerview:${Version.recyclerview}"
 
-    const val viewModel = "androidx.lifecycle:lifecycle-extensions:${Version.viewModel}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.viewModel}"
+    const val viewModelLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Version.viewModel}"
 }
 
 object Module {
