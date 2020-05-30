@@ -5,6 +5,7 @@ object UserInfoDaoConstants {
     const val NAME = "name"
     const val BIRTHDAY = "birthday"
     const val GENDER = "gender"
+    const val TRAINER_ID = "trainerId"
 
     const val USER_PARAMS = "userParams"
     const val HEIGHT = "height"

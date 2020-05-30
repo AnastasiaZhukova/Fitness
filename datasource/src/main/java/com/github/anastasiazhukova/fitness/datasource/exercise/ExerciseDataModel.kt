@@ -1,5 +1,6 @@
 package com.github.anastasiazhukova.fitness.datasource.exercise
 
+import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDaoConstants.AUTHOR_ID
 import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDaoConstants.DESCRIPTION
 import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDaoConstants.NAME
 import com.github.anastasiazhukova.fitness.datasource.user.calories.CaloriesDaoConstants.ID
@@ -9,6 +10,9 @@ import com.google.gson.annotations.SerializedName
 data class ExerciseDataModel(
     @SerializedName(ID)
     val id: String = EMPTY,
+
+    @SerializedName(AUTHOR_ID)
+    val authorId: String = EMPTY,
 
     @SerializedName(NAME)
     val name: String = EMPTY,

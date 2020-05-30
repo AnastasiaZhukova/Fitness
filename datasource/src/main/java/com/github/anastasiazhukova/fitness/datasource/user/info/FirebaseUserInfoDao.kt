@@ -1,6 +1,7 @@
 package com.github.anastasiazhukova.fitness.datasource.user.info
 
 import com.github.anastasiazhukova.fitness.datasource.Firestore.USERS_COLLECTION
+import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.TRAINER_ID
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -19,6 +20,14 @@ class FirebaseUserInfoDao : IUserInfoDao {
             .get()
             .await()
             ?.toObject(UserInfoDataModel::class.java)
+
+    override suspend fun getByTrainerId(trainerId: String): List<UserInfoDataModel> =
+        firestore
+            .collection(USERS_COLLECTION)
+            .whereEqualTo(TRAINER_ID, trainerId)
+            .get()
+            .await()
+            .toObjects(UserInfoDataModel::class.java)
 
     override suspend fun update(model: UserInfoDataModel) {
         firestore

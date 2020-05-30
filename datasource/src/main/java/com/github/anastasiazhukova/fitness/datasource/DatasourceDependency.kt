@@ -2,6 +2,8 @@ package com.github.anastasiazhukova.fitness.datasource
 
 import com.github.anastasiazhukova.fitness.datasource.exercise.FirebaseExerciseDao
 import com.github.anastasiazhukova.fitness.datasource.exercise.IExerciseDao
+import com.github.anastasiazhukova.fitness.datasource.trainer.FirebaseTrainerInfoDao
+import com.github.anastasiazhukova.fitness.datasource.trainer.ITrainerInfoDao
 import com.github.anastasiazhukova.fitness.datasource.user.calories.FirebaseCaloriesDao
 import com.github.anastasiazhukova.fitness.datasource.user.calories.ICaloriesDao
 import com.github.anastasiazhukova.fitness.datasource.user.info.FirebaseUserInfoDao
@@ -18,6 +20,7 @@ object DatasourceDependency {
         factory<IWaterDao> { FirebaseWaterDao() }
         factory<ICaloriesDao> { FirebaseCaloriesDao() }
         factory<IWorkoutPlanDao> { FirebaseWorkoutPlanDao() }
+        factory<ITrainerInfoDao> { FirebaseTrainerInfoDao() }
 
         factory<IExerciseDao> { FirebaseExerciseDao() }
     }

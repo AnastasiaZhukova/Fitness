@@ -1,6 +1,8 @@
 package com.github.anastasiazhukova.fitness.datasource.exercise
 
 import com.github.anastasiazhukova.fitness.datasource.Firestore.EXERCISE_COLLECTION
+import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDaoConstants.AUTHOR_ID
+import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDaoConstants.NAME
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -15,6 +17,7 @@ class FirebaseExerciseDao : IExerciseDao {
     override suspend fun getAll(): List<ExerciseDataModel> =
         firestore
             .collection(EXERCISE_COLLECTION)
+            .orderBy(NAME)
             .get()
             .await()
             .toObjects(ExerciseDataModel::class.java)
@@ -26,6 +29,14 @@ class FirebaseExerciseDao : IExerciseDao {
             .get()
             .await()
             ?.toObject(ExerciseDataModel::class.java)
+
+    override suspend fun getByAuthorId(authorId: String): List<ExerciseDataModel> =
+        firestore
+            .collection(EXERCISE_COLLECTION)
+            .whereEqualTo(AUTHOR_ID, authorId)
+            .get()
+            .await()
+            .toObjects(ExerciseDataModel::class.java)
 
     override suspend fun update(model: ExerciseDataModel) {
         firestore
