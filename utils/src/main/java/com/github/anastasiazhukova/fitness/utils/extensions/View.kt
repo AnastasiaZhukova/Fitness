@@ -28,6 +28,8 @@ fun View.enable() {
     }
 }
 
+fun EditText?.isNullOrEmpty() = this?.text.isNullOrEmpty()
+
 fun EditText?.charactersCount() = this?.text?.length ?: 0
 
 fun EditText?.getTextAsString() = this?.text?.toString() ?: EMPTY

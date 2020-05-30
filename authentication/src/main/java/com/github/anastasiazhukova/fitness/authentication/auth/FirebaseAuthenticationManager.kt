@@ -10,27 +10,27 @@ class FirebaseAuthenticationManager : IAuthenticationManager {
 
     override fun isLoggedIn(): Boolean = auth.currentUser != null
 
-    override suspend fun login(email: String, password: String): Result<Boolean> =
+    override suspend fun login(email: String, password: String): Result<String?> =
         try {
             val user = auth.signInWithEmailAndPassword(email, password).await().user
 
             if (user != null) {
-                Result.Success(true)
+                Result.Success(user.uid)
             } else {
-                Result.Success(false)
+                Result.Success(null)
             }
         } catch (e: Exception) {
             Result.Error(e)
         }
 
-    override suspend fun register(email: String, password: String): Result<Boolean> =
+    override suspend fun register(email: String, password: String): Result<String?> =
         try {
             val user = auth.createUserWithEmailAndPassword(email, password).await().user
 
             if (user != null) {
-                Result.Success(true)
+                Result.Success(user.uid)
             } else {
-                Result.Success(false)
+                Result.Success(null)
             }
         } catch (e: Exception) {
             Result.Error(e)

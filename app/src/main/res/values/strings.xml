@@ -32,13 +32,41 @@
     <string name="menu_calories">Calories</string>
 
     <string name="no_data_label">-</string>
+
     <string name="authentication_email">E-mail</string>
     <string name="authentication_password">Password</string>
     <string name="authentication_repeat_password">Repeat password</string>
+    <string name="authentication_name">Name</string>
+    <string name="authentication_gender">Gender</string>
+    <string name="authentication_gender_female">Female</string>
+    <string name="authentication_gender_male">Male</string>
+    <string name="authentication_birthday">Birthday</string>
+    <string name="authentication_weight">Weight</string>
+    <string name="authentication_height">Height</string>
+    <string name="authentication_fitness_level">Fitness level</string>
+    <string name="authentication_fitness_level_light">Light</string>
+    <string name="authentication_fitness_level_medium">Medium</string>
+    <string name="authentication_fitness_level_hard">Hard</string>
+    <string name="authentication_fitness_goal_calories">Goal calories</string>
+    <string name="authentication_fitness_goal_water">Goal water</string>
+    <string name="authentication_fitness_goal_weight">Goal weight</string>
     <string name="authentication_login">Login</string>
     <string name="authentication_register">Register</string>
     <string name="authentication_no_account">Have no account? Register now.</string>
     <string name="authentication_have_account">Have account? Login now.</string>
+    <string name="authentication_login_credentials_error">Invalid credentials</string>
+
+    <string name="authentication_register_general_error">Error happened. Please try again later</string>
+    <string name="authentication_register_email_error">Please enter e-mail</string>
+    <string name="authentication_register_password_error">Please enter password. Min length is 6 symbols</string>
+    <string name="authentication_register_password_repeat_error">Passwords do not match</string>
+    <string name="authentication_register_name_error">Please enter your name</string>
+    <string name="authentication_register_gender_error">Please select your gender</string>
+    <string name="authentication_register_weight_error">Please enter your weight</string>
+    <string name="authentication_register_height_error">Please enter your height</string>
+    <string name="authentication_register_fitness_level_error">Please enter your fitness level</string>
+    <string name="authentication_register_goal_calories_error">Please enter your calories goal</string>
+    <string name="authentication_register_goal_water_error">Please enter your water goal</string>
 
     <string name="edit_user_info_name">Name</string>
     <string name="edit_user_save">Save</string>

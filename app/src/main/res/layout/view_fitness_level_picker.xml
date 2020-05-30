@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/authentication_fitness_level" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/fitnessLevelGroup"
+        android:layout_width="match_parent"
+        app:singleSelection="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fitnessLevelLight"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/authentication_fitness_level_light" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fitnessLevelMedium"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/authentication_fitness_level_medium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/fitnessLevelHard"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/authentication_fitness_level_hard" />
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>

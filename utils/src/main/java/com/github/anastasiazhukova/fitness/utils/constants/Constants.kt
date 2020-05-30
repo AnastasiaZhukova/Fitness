@@ -13,10 +13,13 @@ object Constants {
         const val ACTIVITY_EXTRA = "ACTIVITY_EXTRA"
     }
 
-    object User {
-        const val ID = "id"
-        const val EMAIL = "email"
-        const val USERNAME = "username"
-        const val BIRTHDAY = "birthday"
+    object Authentication {
+        const val MIN_PASSWORD_LENGTH = 6
+    }
+
+    object FitnessLevel {
+        const val LIGHT = 1
+        const val MEDIUM = 2
+        const val HARD = 3
     }
 }

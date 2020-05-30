@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screens.activities.authentication.presentation.AuthenticationActivity"
-            android:noHistory="true"
+            android:name=".screens.activities.authentication.AuthenticationActivity"
             android:screenOrientation="portrait" />
 
         <activity

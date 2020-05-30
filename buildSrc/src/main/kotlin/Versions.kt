@@ -9,7 +9,7 @@ object AndroidVersion {
 }
 
 object GradleVersion {
-    const val buildTools = "4.0.0-beta04"
+    const val buildTools = "4.0.0"
 }
 
 object Version {

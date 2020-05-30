@@ -51,4 +51,6 @@ dependencies {
     implementation(Libraries.recyclerView)
     
     implementation(Libraries.viewModel)
+
+    implementation(project(Module.chat))
 }

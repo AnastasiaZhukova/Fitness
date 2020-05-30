@@ -56,6 +56,7 @@ dependencies {
     implementation(Libraries.viewModel)
 
     implementation(project(Module.authentication))
+    implementation(project(Module.chat))
     implementation(project(Module.datasource))
     implementation(project(Module.uiComponents))
     implementation(project(Module.utils))

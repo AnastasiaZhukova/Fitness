@@ -2,6 +2,7 @@ include ':app'
 include ':fitnessadmin'
 
 include ':authentication'
+include ':chat'
 include ':datasource'
 include ':uiComponents'
 include ':utils'

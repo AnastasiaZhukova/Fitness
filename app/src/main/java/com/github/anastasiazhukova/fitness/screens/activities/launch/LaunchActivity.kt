@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.authentication.auth.IAuthenticationManager
-import com.github.anastasiazhukova.fitness.screens.activities.authentication.presentation.AuthenticationActivity
+import com.github.anastasiazhukova.fitness.screens.activities.authentication.AuthenticationActivity
 import com.github.anastasiazhukova.fitness.screens.activities.main.MainActivity
 import org.koin.android.ext.android.inject
 
