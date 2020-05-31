@@ -7,6 +7,7 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.github.anastasiazhukova.fitness.admin.R
@@ -67,13 +68,17 @@ class EditExerciseDialog : DialogFragment() {
         val saveButton = view.findViewById<Button>(R.id.saveButton)
         val cancelButton = view.findViewById<Button>(R.id.cancelButton)
         val deleteButton = view.findViewById<Button>(R.id.deleteButton)
+        val titleTextView = view.findViewById<TextView>(R.id.title)
         val nameTextInput = view.findViewById<EditText>(R.id.name)
         val descriptionTextInput = view.findViewById<EditText>(R.id.description)
+
+        titleTextView.setText(R.string.edit_exercise_title_add)
 
         model?.let {
             nameTextInput.setText(it.name)
             descriptionTextInput.setText(it.description)
             deleteButton.visible()
+            titleTextView.setText(R.string.edit_exercise_title_edit)
         }
 
         nameTextInput?.addTextChangedListener(SimpleTextWatcher {

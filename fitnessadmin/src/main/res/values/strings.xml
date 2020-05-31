@@ -9,6 +9,8 @@
 
     <string name="edit">Edit</string>
 
+    <string name="edit_exercise_title_add">Add exercise</string>
+    <string name="edit_exercise_title_edit">Edit exercise</string>
     <string name="edit_exercise_name_hint">Name</string>
     <string name="edit_exercise_description_hint">Description</string>
     <string name="edit_exercise_save">Save</string>
