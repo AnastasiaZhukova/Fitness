@@ -70,7 +70,9 @@ class EditExerciseDialog : DialogFragment() {
         val nameTextInput = view.findViewById<EditText>(R.id.name)
         val descriptionTextInput = view.findViewById<EditText>(R.id.description)
 
-        if (model != null) {
+        model?.let {
+            nameTextInput.setText(it.name)
+            descriptionTextInput.setText(it.description)
             deleteButton.visible()
         }
 

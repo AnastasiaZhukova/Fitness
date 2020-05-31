@@ -12,8 +12,6 @@ import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domai
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.viewmodel.ExercisesViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.visible
-import kotlinx.android.synthetic.main.fragment_clients.*
-import kotlinx.android.synthetic.main.fragment_clients.progress
 import kotlinx.android.synthetic.main.fragment_exercise.*
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
@@ -36,7 +34,7 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
             onAddClicked()
         }
 
-        clientsList?.apply {
+        exercisesList?.apply {
             adapter = exerciseAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
@@ -50,10 +48,12 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
     }
 
     override fun onEditClicked(model: ExerciseModel) {
-        EditExerciseDialog().apply {
-            setModel(model)
-            setListener(this@ExerciseFragment)
-            show(parentFragmentManager)
+        parentFragmentManager.let { fragmentManager ->
+            EditExerciseDialog().apply {
+                setModel(model)
+                setListener(this@ExerciseFragment)
+                show(fragmentManager)
+            }
         }
     }
 
@@ -91,6 +91,7 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
     private fun setExercisesUiState(uiState: ExercisesScreenUiState) {
         when (uiState) {
             is ExercisesScreenUiState.Loading -> setLoadingState()
+            is ExercisesScreenUiState.OperationInProgress -> setOperationInProgressState()
             is ExercisesScreenUiState.Success -> setModel(uiState.model)
             is ExercisesScreenUiState.Error -> setError(uiState.e)
         }
@@ -99,6 +100,10 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
     private fun setLoadingState() {
         progress.visible()
         exerciseAdapter.items = emptyList()
+    }
+
+    private fun setOperationInProgressState() {
+        progress.visible()
     }
 
     private fun setModel(model: List<ExerciseModel>) {

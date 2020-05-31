@@ -65,6 +65,7 @@ class ExercisesViewModel(
     private fun pushResult(result: Result<List<ExerciseModel>>) =
         when (result) {
             is Result.Success -> {
+                exercisesModel = result.value
                 _exercisesLiveData.value = ExercisesScreenUiState.Success(exercisesModel)
             }
             is Result.Error -> {
