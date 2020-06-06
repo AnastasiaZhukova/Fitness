@@ -8,8 +8,7 @@ import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.view_elements_list.view.*
 
 interface IElementsListListener {
-    fun onAddElement()
-    fun onDeleteElement(position: Int)
+    fun onAddButtonClicked()
 }
 
 class ElementsListView @JvmOverloads constructor(
@@ -24,7 +23,7 @@ class ElementsListView @JvmOverloads constructor(
         View.inflate(context, R.layout.view_elements_list, this)
 
         addButton?.setOnClickListener {
-            listener?.onAddElement()
+            listener?.onAddButtonClicked()
         }
     }
 

@@ -1,15 +1,16 @@
-package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain
+package com.github.anastasiazhukova.fitness.domain.workoutPlan
 
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDataModel
 import com.github.anastasiazhukova.fitness.utils.IMapper
 
 class WorkoutPlanDataModelMapper : IMapper<WorkoutPlanDataModel, WorkoutPlanModel?> {
     override fun invoke(data: WorkoutPlanDataModel): WorkoutPlanModel? {
-        val entries = data.exerciseEntries.mapNotNull { entry ->
+        val exerciseEntries = data.exerciseEntries.mapNotNull { entry ->
             if (entry.id.isNotEmpty() && entry.time != null) {
                 ExerciseEntry(
                     id = entry.id,
-                    time = entry.time!!,
+                    relatedExerciseId = entry.relatedExerciseEntryId,
+                    timeInMillis = entry.time,
                     comments = entry.comments
                 )
             } else {
@@ -20,12 +21,12 @@ class WorkoutPlanDataModelMapper : IMapper<WorkoutPlanDataModel, WorkoutPlanMode
         return if (data.id.isNotEmpty() && data.date != null) {
             WorkoutPlanModel(
                 id = data.id,
-                date = data.date!!,
+                date = data.date,
                 preview = data.preview,
                 duration = data.duration,
                 calories = data.calories,
                 level = data.level,
-                entries = entries
+                entries = exerciseEntries
             )
         } else {
             null

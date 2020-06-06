@@ -3,7 +3,7 @@ package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.view
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.presentation.ExercisesScreenUiState
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.usecase.IExercisesUseCase
 import com.github.anastasiazhukova.fitness.utils.Result

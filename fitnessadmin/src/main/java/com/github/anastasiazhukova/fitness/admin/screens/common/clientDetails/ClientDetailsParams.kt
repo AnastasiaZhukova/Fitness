@@ -1,4 +1,4 @@
-package com.github.anastasiazhukova.fitness.admin.screens.activity.clientDetails.domain
+package com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

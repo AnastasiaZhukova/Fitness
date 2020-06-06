@@ -72,17 +72,13 @@ class WaterFragment :
 
     override fun onDatePicked(date: Long) = waterViewModel.get(date)
 
-    override fun onAddElement() {
+    override fun onAddButtonClicked() {
         parentFragmentManager.let { fragmentManager ->
             AddWaterEntryDialog().apply {
                 setListener(addWaterDialogClickListener)
                 show(fragmentManager)
             }
         }
-    }
-
-    override fun onDeleteElement(position: Int) {
-        //todo
     }
 
     private fun updateUi(uiState: WaterScreenUiState) {

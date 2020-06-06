@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.admin.R
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.viewmodel.ExercisesViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.visible

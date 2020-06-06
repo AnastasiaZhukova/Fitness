@@ -10,6 +10,7 @@ object WorkoutPlanDaoConstants {
     const val EXERCISE_ENTRIES = "exerciseEntries"
 
     const val EXERCISE_ENTRY_ID = "id"
+    const val RELATED_EXERCISE_ENTRY_ID = "relatedExerciseEntryId"
     const val TIME = "time"
     const val COMMENTS = "comments"
 }

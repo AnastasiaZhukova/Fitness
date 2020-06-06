@@ -6,8 +6,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.github.anastasiazhukova.fitness.R
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.screens.activities.workout.presentation.WorkoutActivity
-import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.viewmodel.WorkoutPlanViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.visible

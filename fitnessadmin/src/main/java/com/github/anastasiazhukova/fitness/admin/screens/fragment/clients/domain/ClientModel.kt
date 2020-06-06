@@ -1,6 +1,6 @@
 package com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.domain
 
-import com.github.anastasiazhukova.fitness.admin.screens.activity.clientDetails.domain.ClientDetailsParams
+import com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails.ClientDetailsParams
 
 data class ClientModel(
     val id: String,

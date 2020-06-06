@@ -1,6 +1,6 @@
-package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.datasource
+package com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource
 
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
 import com.github.anastasiazhukova.fitness.datasource.exercise.ExerciseDataModel
 import com.github.anastasiazhukova.fitness.datasource.exercise.IExerciseDao

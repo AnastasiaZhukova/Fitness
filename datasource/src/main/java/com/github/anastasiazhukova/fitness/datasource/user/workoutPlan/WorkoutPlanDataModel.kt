@@ -9,6 +9,7 @@ import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPl
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDaoConstants.ID
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDaoConstants.LEVEL
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDaoConstants.PREVIEW
+import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDaoConstants.RELATED_EXERCISE_ENTRY_ID
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDaoConstants.TIME
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.String.EMPTY
 import com.google.gson.annotations.SerializedName
@@ -40,9 +41,12 @@ data class ExerciseEntryDataModel(
     @SerializedName(EXERCISE_ENTRY_ID)
     val id: String = EMPTY,
 
+    @SerializedName(RELATED_EXERCISE_ENTRY_ID)
+    val relatedExerciseEntryId: String = EMPTY,
+
     @SerializedName(TIME)
     val time: Int? = -1,
 
     @SerializedName(COMMENTS)
-    val comments: String = EMPTY
+    val comments: String? = EMPTY
 )

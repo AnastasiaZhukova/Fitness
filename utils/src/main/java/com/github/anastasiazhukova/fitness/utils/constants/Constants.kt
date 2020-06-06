@@ -7,6 +7,7 @@ object Constants {
 
     object Time {
         const val SECONDS_5_IN_MILLIS = 5000L
+        const val MILLIS_IN_SECOND = 1000L
     }
 
     object Extra {

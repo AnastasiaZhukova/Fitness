@@ -4,17 +4,21 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.anastasiazhukova.fitness.admin.R
-import com.github.anastasiazhukova.fitness.admin.screens.activity.clientDetails.domain.ClientDetailsParams
+import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.presentation.WorkoutPlanActivity
+import com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails.ClientDetailsParams
 import com.github.anastasiazhukova.fitness.utils.extensions.getActivityExtra
 import com.github.anastasiazhukova.fitness.utils.extensions.startActivity
 import kotlinx.android.synthetic.main.activity_client_details.*
 
 class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details) {
 
+    private var clientDetailsParams: ClientDetailsParams? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         intent.getActivityExtra<ClientDetailsParams>()?.let { clientDetailsParams ->
+            this.clientDetailsParams = clientDetailsParams
             initViews(clientDetailsParams)
         }
     }
@@ -74,7 +78,9 @@ class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details
     }
 
     private fun startWorkoutPlanActivity() {
-
+        clientDetailsParams?.let {
+            WorkoutPlanActivity.start(it, this)
+        }
     }
 
     companion object Companion {

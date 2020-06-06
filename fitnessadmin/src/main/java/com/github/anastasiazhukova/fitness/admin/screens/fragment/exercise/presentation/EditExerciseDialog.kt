@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import com.github.anastasiazhukova.fitness.admin.R
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 import com.github.anastasiazhukova.fitness.utils.SimpleTextWatcher
 import com.github.anastasiazhukova.fitness.utils.extensions.*
 

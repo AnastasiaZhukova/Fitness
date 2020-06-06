@@ -3,7 +3,7 @@ package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.dataso
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.IWorkoutPlanDao
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.WorkoutPlanDataModel
-import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain.WorkoutPlanModel
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.utils.IMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

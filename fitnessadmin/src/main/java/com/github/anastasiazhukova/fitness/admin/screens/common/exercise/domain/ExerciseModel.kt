@@ -1,4 +1,4 @@
-package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain
+package com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain
 
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.String.EMPTY
 

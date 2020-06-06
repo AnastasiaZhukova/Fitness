@@ -5,11 +5,20 @@
     <string name="kg">kg</string>
     <string name="cal">cal</string>
     <string name="cm">cm</string>
+    <string name="sec">sec</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
     <string name="level_light">Light</string>
     <string name="level_medium">Medium</string>
     <string name="level_hard">Hard</string>
+
+    <string name="level">Level</string>
+    <string name="calories">Calories</string>
+    <string name="level_1">1</string>
+    <string name="level_2">2</string>
+    <string name="level_3">3</string>
+    <string name="level_4">4</string>
+    <string name="level_5">5</string>
 
     <string name="menu_clients">Clients</string>
     <string name="menu_exercises">Exercises</string>
@@ -23,6 +32,8 @@
     <string name="edit_exercise_title_edit">Edit exercise</string>
     <string name="edit_exercise_name_hint">Name</string>
     <string name="edit_exercise_description_hint">Description</string>
+    <string name="edit_exercise_comment_hint">Comments (optional)</string>
+    <string name="edit_exercise_time_hint">Time (seconds)</string>
     <string name="edit_exercise_save">Save</string>
     <string name="edit_exercise_cancel">Cancel</string>
     <string name="edit_exercise_delete">Delete</string>
@@ -56,4 +67,6 @@
     <string name="client_details_goal_calories">Goal calories: %1$s</string>
     <string name="client_details_manage_workout_plan">Manage workout plan</string>
     <string name="client_details_chat">Go to chat</string>
+
+    <string name="workout_plan_save">Save</string>
 </resources>

@@ -17,9 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screens.activity.authentication.AuthenticationActivity" />
-        <activity android:name=".screens.activity.clientDetails.presentation.ClientDetailsActivity" />
-        <activity android:name=".screens.activity.main.MainActivity" />
+        <activity
+            android:name=".screens.activity.authentication.AuthenticationActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".screens.activity.clientDetails.presentation.ClientDetailsActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".screens.activity.main.MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".screens.activity.workoutPlan.presentation.WorkoutPlanActivity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

@@ -1,9 +1,9 @@
 package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise
 
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.datasource.ExerciseDataSource
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.datasource.IExerciseDataSource
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseDataModelMapper
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModelDataMapper
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource.ExerciseDataSource
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource.IExerciseDataSource
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseDataModelMapper
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModelDataMapper
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.presentation.ExerciseFragment
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.usecase.ExercisesUseCase
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.usecase.IExercisesUseCase

@@ -18,7 +18,7 @@ class WorkoutDataSource(
         withContext(Dispatchers.IO) {
             val entries: List<ExerciseEntry> = workoutParams.entries.mapNotNull { params ->
                 try {
-                    val dataModel = exerciseDao.get(params.id)
+                    val dataModel = exerciseDao.get(params.relatedExerciseId)
 
                     if (dataModel != null) {
                         return@mapNotNull ExerciseEntry(

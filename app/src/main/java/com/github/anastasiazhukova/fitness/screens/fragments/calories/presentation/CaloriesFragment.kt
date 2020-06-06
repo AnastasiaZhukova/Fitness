@@ -73,17 +73,13 @@ class CaloriesFragment :
 
     override fun onDatePicked(date: Long) = caloriesViewModel.get(date)
 
-    override fun onAddElement() {
+    override fun onAddButtonClicked() {
         parentFragmentManager.let { fragmentManager ->
             AddCaloriesEntryDialog().apply {
                 setListener(addWaterDialogClickListener)
                 show(fragmentManager)
             }
         }
-    }
-
-    override fun onDeleteElement(position: Int) {
-        //todo
     }
 
     private fun updateUi(uiState: CaloriesScreenUiState) {

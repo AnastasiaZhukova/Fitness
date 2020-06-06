@@ -1,6 +1,6 @@
-package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.datasource
+package com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource
 
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 
 interface IExerciseDataSource {
     suspend fun getAll(): List<ExerciseModel>

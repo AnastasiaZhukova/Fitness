@@ -3,9 +3,9 @@ package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.viewmo
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.screens.activities.workout.domain.params.WorkoutParams
-import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain.WorkoutPlanModel
-import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain.toWorkoutParams
+import com.github.anastasiazhukova.fitness.screens.activities.workout.domain.params.toWorkoutParams
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.presentation.WorkoutPlanUiState
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.usecase.IWorkoutPlanUseCase
 import com.github.anastasiazhukova.fitness.utils.Result

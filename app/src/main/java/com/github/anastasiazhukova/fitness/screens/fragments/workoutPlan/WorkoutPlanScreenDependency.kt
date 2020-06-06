@@ -1,8 +1,8 @@
 package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan
 
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanDataModelMapper
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.datasource.IWorkoutPlanDataSource
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.datasource.WorkoutPlanDataSource
-import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.domain.WorkoutPlanDataModelMapper
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.presentation.WorkoutPlanFragment
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.usecase.IWorkoutPlanUseCase
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.usecase.WorkoutPlanUseCase

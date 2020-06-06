@@ -1,6 +1,7 @@
 package com.github.anastasiazhukova.fitness.admin
 
 import android.app.Application
+import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.WorkoutPlanScreenDependency
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.ClientsScreenDependency
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.ExerciseScreenDependency
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.login.LoginScreenDependency
@@ -23,7 +24,8 @@ class MainApplication : Application() {
                 RegisterScreenDependency.module,
                 ClientsScreenDependency.module,
                 DatasourceDependency.module,
-                ExerciseScreenDependency.module
+                ExerciseScreenDependency.module,
+                WorkoutPlanScreenDependency.module
             )
         }
     }

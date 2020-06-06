@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingTop="8dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/exerciseName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/editButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Client" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/exerciseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/editButton"
+        app:layout_constraintBottom_toBottomOf="@id/exerciseName"
+        app:layout_constraintEnd_toStartOf="@id/editButton"
+        app:layout_constraintStart_toEndOf="@id/exerciseName"
+        app:layout_constraintTop_toTopOf="@id/exerciseName"
+        tools:text="30 sec" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/edit"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/exerciseTime"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

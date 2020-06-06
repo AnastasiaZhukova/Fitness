@@ -1,7 +1,7 @@
 package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.usecase
 
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.datasource.IExerciseDataSource
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource.IExerciseDataSource
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 import com.github.anastasiazhukova.fitness.utils.Result
 
 class ExercisesUseCase(

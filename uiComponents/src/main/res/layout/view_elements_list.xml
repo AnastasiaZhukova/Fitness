@@ -14,6 +14,7 @@
             android:id="@+id/list"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:overScrollMode="never"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             app:layout_constraintBottom_toTopOf="@id/addButton"
@@ -24,11 +25,11 @@
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
-            app:layout_constraintStart_toStartOf="@id/list"
-            app:layout_constraintEnd_toEndOf="@id/list"
-            app:layout_constraintTop_toBottomOf="@id/list"
+            android:background="@color/mediumText"
             app:layout_constraintBottom_toTopOf="@id/addButton"
-            android:background="@color/mediumText" />
+            app:layout_constraintEnd_toEndOf="@id/list"
+            app:layout_constraintStart_toStartOf="@id/list"
+            app:layout_constraintTop_toBottomOf="@id/list" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addButton"

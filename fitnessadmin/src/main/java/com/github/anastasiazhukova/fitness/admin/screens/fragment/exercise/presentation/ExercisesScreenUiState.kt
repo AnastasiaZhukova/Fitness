@@ -1,6 +1,6 @@
 package com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.presentation
 
-import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
 
 sealed class ExercisesScreenUiState {
     object Loading : ExercisesScreenUiState()
