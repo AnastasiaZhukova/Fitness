@@ -15,7 +15,8 @@ class ClientsDataModelMapper : IMapper<UserInfoDataModel, ClientModel> {
             weight = userInfoDataModel.userParams?.weight,
             fitnessLevel = userInfoDataModel.userParams?.fitnessLevel,
             goalCalories = userInfoDataModel.userGoal?.goalCalories,
-            goalWater = userInfoDataModel.userGoal?.goalWater
+            goalWater = userInfoDataModel.userGoal?.goalWater,
+            goalWeight = userInfoDataModel.userGoal?.goalWeight
         )
     }
 }

@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".screens.activity.authentication.AuthenticationActivity" />
+        <activity android:name=".screens.activity.clientDetails.presentation.ClientDetailsActivity" />
         <activity android:name=".screens.activity.main.MainActivity" />
     </application>
 

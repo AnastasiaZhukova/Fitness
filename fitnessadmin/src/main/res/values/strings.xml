@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">FitnessAdmin</string>
 
+    <string name="ml">ml</string>
+    <string name="kg">kg</string>
+    <string name="cal">cal</string>
+    <string name="cm">cm</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="level_light">Light</string>
+    <string name="level_medium">Medium</string>
+    <string name="level_hard">Hard</string>
+
     <string name="menu_clients">Clients</string>
     <string name="menu_exercises">Exercises</string>
 
@@ -34,4 +44,16 @@
     <string name="authentication_register_password_repeat_error">Passwords do not match</string>
     <string name="authentication_register_name_error">Please enter your name</string>
     <string name="authentication_register_nickname_error">Please enter your nickname</string>
+
+    <string name="client_details_no_data">No data set</string>
+    <string name="client_details_goal">Goal weight: %1$s kg\nGoal calories: %2$s cal\nGoal water: %3$s ml</string>
+    <string name="client_details_gender">Gender: %1$s</string>
+    <string name="client_details_height">Height: %1$s</string>
+    <string name="client_details_weight">Weight: %1$s</string>
+    <string name="client_details_fitness_level">Fitness level: %1$s</string>
+    <string name="client_details_goal_water">Goal water: %1$s</string>
+    <string name="client_details_goal_weight">Goal weight: %1$s</string>
+    <string name="client_details_goal_calories">Goal calories: %1$s</string>
+    <string name="client_details_manage_workout_plan">Manage workout plan</string>
+    <string name="client_details_chat">Go to chat</string>
 </resources>

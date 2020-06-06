@@ -1,7 +1,6 @@
 package com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -9,7 +8,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.admin.R
+import com.github.anastasiazhukova.fitness.admin.screens.activity.clientDetails.presentation.ClientDetailsActivity
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.domain.ClientModel
+import com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.domain.toClientDetailsParams
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.viewmodel.ClientsViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.visible
@@ -43,10 +44,13 @@ class ClientsFragment : Fragment(R.layout.fragment_clients), IClientClickListene
         clientsViewModel.load()
     }
 
-    val TAG = "DebugTag ClientsFragment";
-
     override fun onClick(model: ClientModel) {
-        Log.d(TAG, "onClick: model = $model")
+        context?.let { context ->
+            ClientDetailsActivity.start(
+                clientDetailsParams = model.toClientDetailsParams(),
+                context = context
+            )
+        }
     }
 
     private fun setClientsUiState(uiState: ClientsUiState) {
