@@ -76,6 +76,11 @@
     <string name="add_water_entry_dialog_amount_hint">Amount (ml)</string>
     <string name="add_water_entry_dialog_save">Save</string>
     <string name="add_water_entry_dialog_cancel">Cancel</string>
+    <string name="add_water_entry_dialog_water">Water</string>
+    <string name="add_water_entry_dialog_tea">Tea</string>
+    <string name="add_water_entry_dialog_coffee">Coffee</string>
+    <string name="add_water_entry_dialog_milk">Milk</string>
+
 
     <string name="add_calories_entry_dialog_title">Add entry</string>
     <string name="add_calories_entry_dialog_name_hint">Name</string>

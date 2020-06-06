@@ -34,8 +34,11 @@ class CaloriesAdapter : RecyclerView.Adapter<CaloriesAdapter.CaloriesViewHolder>
     inner class CaloriesViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(model: CaloriesEntry) {
-            val text = view.findViewById<MaterialTextView>(R.id.text)
-            text.text = "${model.name} ${model.calories} ${model.weight}"
+            val type = view.findViewById<MaterialTextView>(R.id.type)
+            val amount = view.findViewById<MaterialTextView>(R.id.amount)
+            type.text = "${model.name}"
+            val cal = (model.weight * model.calories) / 100
+            amount.text = "$cal cal"
         }
     }
 }

@@ -12,23 +12,72 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/defaultMargin"
         android:text="@string/add_water_entry_dialog_title"
-        app:layout_constraintBottom_toTopOf="@id/amountField"
+        app:layout_constraintBottom_toTopOf="@id/waterGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/amountField"
-        android:layout_width="0dp"
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/waterGroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/defaultMargin"
+        app:layout_constraintBottom_toTopOf="@id/amountFieldLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/water"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_water_entry_dialog_water" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/coffee"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_water_entry_dialog_coffee" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/tea"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_water_entry_dialog_tea" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/milk"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_water_entry_dialog_milk" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountFieldLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:hint="@string/add_water_entry_dialog_amount_hint"
-        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/waterGroup">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/amountField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
@@ -40,7 +89,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cancelButton"
-        app:layout_constraintTop_toBottomOf="@id/amountField" />
+        app:layout_constraintTop_toBottomOf="@id/amountFieldLayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelButton"

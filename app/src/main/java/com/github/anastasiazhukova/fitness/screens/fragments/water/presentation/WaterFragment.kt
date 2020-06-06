@@ -34,10 +34,10 @@ class WaterFragment :
         updateUi(it)
     }
     private val addWaterDialogClickListener = object : IAddWaterDialogClickListener {
-        override fun onAdded(amount: Int) {
+        override fun onAdded(type: String, amount: Int) {
             //todo
             val waterEntry = WaterEntry(
-                type = "Water",
+                type = type,
                 amount = amount
             )
 

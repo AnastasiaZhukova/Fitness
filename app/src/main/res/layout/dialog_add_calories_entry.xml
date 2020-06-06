@@ -12,49 +12,73 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/defaultMargin"
         android:text="@string/add_calories_entry_dialog_title"
-        app:layout_constraintBottom_toTopOf="@id/nameField"
+        app:layout_constraintBottom_toTopOf="@id/nameFieldLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameField"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameFieldLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/defaultMargin"
         android:hint="@string/add_calories_entry_dialog_name_hint"
-        android:inputType="text"
-        android:lines="1"
-        android:maxLines="1"
-        app:layout_constraintBottom_toTopOf="@id/weightField"
+        app:layout_constraintBottom_toTopOf="@id/weightFieldLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/weightField"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weightFieldLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/defaultMargin"
         android:hint="@string/add_calories_entry_dialog_weight_hint"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@id/caloriesField"
-        app:layout_constraintEnd_toEndOf="@id/nameField"
-        app:layout_constraintStart_toStartOf="@id/nameField"
-        app:layout_constraintTop_toBottomOf="@id/nameField" />
+        app:layout_constraintBottom_toTopOf="@id/caloriesFieldLayout"
+        app:layout_constraintEnd_toEndOf="@id/nameFieldLayout"
+        app:layout_constraintStart_toStartOf="@id/nameFieldLayout"
+        app:layout_constraintTop_toBottomOf="@id/nameFieldLayout">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/caloriesField"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weightField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/caloriesFieldLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/defaultMargin"
         android:hint="@string/add_calories_entry_dialog_calories_hint"
-        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@id/saveButton"
-        app:layout_constraintEnd_toEndOf="@id/nameField"
-        app:layout_constraintStart_toStartOf="@id/nameField"
-        app:layout_constraintTop_toBottomOf="@id/weightField" />
+        app:layout_constraintEnd_toEndOf="@id/nameFieldLayout"
+        app:layout_constraintStart_toStartOf="@id/nameFieldLayout"
+        app:layout_constraintTop_toBottomOf="@id/weightFieldLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/caloriesField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveButton"
@@ -66,7 +90,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cancelButton"
-        app:layout_constraintTop_toBottomOf="@id/caloriesField" />
+        app:layout_constraintTop_toBottomOf="@id/caloriesFieldLayout" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelButton"

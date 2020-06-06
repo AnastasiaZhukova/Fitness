@@ -14,9 +14,10 @@ import com.github.anastasiazhukova.fitness.utils.SimpleTextWatcher
 import com.github.anastasiazhukova.fitness.utils.extensions.asInt
 import com.github.anastasiazhukova.fitness.utils.extensions.disable
 import com.github.anastasiazhukova.fitness.utils.extensions.enable
+import com.google.android.material.chip.ChipGroup
 
 interface IAddWaterDialogClickListener {
-    fun onAdded(amount: Int)
+    fun onAdded(type: String, amount: Int)
 }
 
 class AddWaterEntryDialog : DialogFragment() {
@@ -61,6 +62,7 @@ class AddWaterEntryDialog : DialogFragment() {
         val saveButton = view.findViewById<Button>(R.id.saveButton)
         val cancelButton = view.findViewById<Button>(R.id.cancelButton)
         val amountTextInput = view.findViewById<EditText>(R.id.amountField)
+        val waterGroup = view.findViewById<ChipGroup>(R.id.waterGroup)
 
         amountTextInput?.addTextChangedListener(SimpleTextWatcher {
             if (it > 0) {
@@ -71,7 +73,15 @@ class AddWaterEntryDialog : DialogFragment() {
         })
 
         saveButton?.setOnClickListener {
-            listener?.onAdded(amountTextInput.asInt())
+            val type = when (waterGroup.checkedChipId) {
+                R.id.water -> "Water"
+                R.id.coffee -> "Coffee"
+                R.id.milk -> "Milk"
+                R.id.tea -> "Tea"
+                else -> "Water"
+            }
+
+            listener?.onAdded(type, amountTextInput.asInt())
             closeDialog()
         }
 

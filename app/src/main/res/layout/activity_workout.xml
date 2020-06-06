@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/defaultMargin"
                     android:gravity="center_vertical"
-                    android:textSize="36sp"
+                    android:textSize="24sp"
                     tools:text="@tools:sample/lorem" />
 
                 <com.google.android.material.textview.MaterialTextView

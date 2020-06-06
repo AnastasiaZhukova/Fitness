@@ -4,11 +4,20 @@
     android:layout_height="48dp">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/text"
+        android:id="@+id/type"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Text"
-        android:textSize="18sp"/>
+        android:paddingStart="16dp"
+        android:textSize="18sp" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/amount"
+        android:gravity="center_vertical|end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Text"
+        android:paddingEnd="16dp"
+        android:textSize="18sp" />
 </FrameLayout>

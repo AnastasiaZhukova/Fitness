@@ -34,8 +34,10 @@ class WaterAdapter : RecyclerView.Adapter<WaterAdapter.WaterViewHolder>() {
     inner class WaterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(model: WaterEntry) {
-            val text = view.findViewById<MaterialTextView>(R.id.text)
-            text.text = "${model.type} ${model.amount}"
+            val type = view.findViewById<MaterialTextView>(R.id.type)
+            val amount = view.findViewById<MaterialTextView>(R.id.amount)
+            type.text = "${model.type}"
+            amount.text = "${model.amount} ml"
         }
     }
 }
