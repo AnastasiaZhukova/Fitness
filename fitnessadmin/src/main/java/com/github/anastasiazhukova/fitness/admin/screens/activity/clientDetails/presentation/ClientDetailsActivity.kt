@@ -6,11 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.anastasiazhukova.fitness.admin.R
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.presentation.WorkoutPlanActivity
 import com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails.ClientDetailsParams
+import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
+import com.github.anastasiazhukova.fitness.chat.domain.ChatParams
+import com.github.anastasiazhukova.fitness.chat.presentation.ChatActivity
+import com.github.anastasiazhukova.fitness.chat.utils.getChatId
 import com.github.anastasiazhukova.fitness.utils.extensions.getActivityExtra
 import com.github.anastasiazhukova.fitness.utils.extensions.startActivity
 import kotlinx.android.synthetic.main.activity_client_details.*
+import org.koin.android.ext.android.inject
 
 class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details) {
+
+    private val userIdHolder: IUserIdHolder by inject()
 
     private var clientDetailsParams: ClientDetailsParams? = null
 
@@ -74,7 +81,23 @@ class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details
     }
 
     private fun startChatActivity() {
+        val trainerId = userIdHolder.getCurrentUserId()
+        val clientId = clientDetailsParams?.id
+        val clientName = clientDetailsParams?.name
 
+        if (!trainerId.isNullOrEmpty() && !clientId.isNullOrEmpty() && !clientName.isNullOrEmpty()) {
+            val chatId = getChatId(
+                trainerId = trainerId,
+                userId = clientId
+            )
+
+            ChatActivity.start(
+                ChatParams(
+                    chatId = chatId,
+                    chatOpponent = clientName
+                ), this
+            )
+        }
     }
 
     private fun startWorkoutPlanActivity() {

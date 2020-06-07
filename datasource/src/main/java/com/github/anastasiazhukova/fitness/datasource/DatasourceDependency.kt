@@ -1,5 +1,7 @@
 package com.github.anastasiazhukova.fitness.datasource
 
+import com.github.anastasiazhukova.fitness.datasource.chat.FirebaseChatDao
+import com.github.anastasiazhukova.fitness.datasource.chat.IChatDao
 import com.github.anastasiazhukova.fitness.datasource.exercise.FirebaseExerciseDao
 import com.github.anastasiazhukova.fitness.datasource.exercise.IExerciseDao
 import com.github.anastasiazhukova.fitness.datasource.trainer.FirebaseTrainerInfoDao
@@ -23,5 +25,7 @@ object DatasourceDependency {
         factory<ITrainerInfoDao> { FirebaseTrainerInfoDao() }
 
         factory<IExerciseDao> { FirebaseExerciseDao() }
+
+        factory<IChatDao> { FirebaseChatDao() }
     }
 }

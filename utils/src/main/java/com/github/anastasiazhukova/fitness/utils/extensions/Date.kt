@@ -6,6 +6,9 @@ import java.util.*
 
 fun Long.toReadableDate(): String = SimpleDateFormat("dd LLLL yyyy", Locale.US).format(Date(this))
 
+fun Long.toReadableTimeAndDate(): String =
+    SimpleDateFormat("MMM d, yyyy h:mm a", Locale.US).format(Date(this))
+
 fun Int.toMillisAsInt(): Int {
     return (this * Constants.Time.MILLIS_IN_SECOND).toInt()
 }

@@ -8,4 +8,7 @@ object Firestore {
     const val USER_WORKOUT_PLAN_COLLECTION = "userWorkoutPlan"
 
     const val EXERCISE_COLLECTION = "exercises"
+
+    const val CHAT_COLLECTION = "chat"
+    const val MESSAGES_COLLECTION = "messages"
 }

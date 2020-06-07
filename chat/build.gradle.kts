@@ -26,6 +26,8 @@ android {
 dependencies {
     implementation(Libraries.firebaseFirestore)
 
+    implementation(Libraries.appCompat)
+    implementation(Libraries.constraintLayout)
     implementation(Libraries.koinCore)
     implementation(Libraries.koinExt)
     implementation(Libraries.koinScope)
@@ -34,7 +36,11 @@ dependencies {
     implementation(Libraries.kotlinCoroutines)
     implementation(Libraries.kotlinCoroutinesAndroid)
     implementation(Libraries.kotlinCoroutinesIntegration)
+    implementation(Libraries.materialComponents)
+    implementation(Libraries.recyclerView)
 
+    implementation(project(Module.authentication))
+    implementation(project(Module.datasource))
     implementation(project(Module.utils))
     implementation(project(Module.uiComponents))
 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="hint_message">Enter message</string>
+    <string name="send">Send</string>
+    <string name="chat_title">Chat with %1$s</string>
+</resources>

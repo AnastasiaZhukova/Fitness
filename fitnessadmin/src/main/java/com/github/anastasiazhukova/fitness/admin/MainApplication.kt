@@ -6,6 +6,7 @@ import com.github.anastasiazhukova.fitness.admin.screens.fragment.clients.Client
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.exercise.ExerciseScreenDependency
 import com.github.anastasiazhukova.fitness.admin.screens.fragment.login.LoginScreenDependency
 import com.github.anastasiazhukova.fitness.authentication.AuthenticationDependency
+import com.github.anastasiazhukova.fitness.chat.ChatScreenDependency
 import com.github.anastasiazhukova.fitness.datasource.DatasourceDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.register.RegisterScreenDependency
 import org.koin.android.ext.koin.androidContext
@@ -25,7 +26,8 @@ class MainApplication : Application() {
                 ClientsScreenDependency.module,
                 DatasourceDependency.module,
                 ExerciseScreenDependency.module,
-                WorkoutPlanScreenDependency.module
+                WorkoutPlanScreenDependency.module,
+                ChatScreenDependency.module
             )
         }
     }
