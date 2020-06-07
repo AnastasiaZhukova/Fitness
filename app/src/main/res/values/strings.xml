@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Fitness</string>
 
+    <string name="sec">sec</string>
+    <string name="min">min</string>
+
     <string name="workout_section_label">Your today\'s workout</string>
-    <string name="workout_duration_label">Duration - %d min</string>
+    <string name="workout_duration_label">Duration - %1s</string>
     <string name="workout_calories_label">Calories - %d cal</string>
     <string name="workout_level_label">Level - %s</string>
     <string name="workout_break_text">Nice job! Take a break!</string>
@@ -89,6 +92,7 @@
     <string name="add_calories_entry_dialog_save">Save</string>
     <string name="add_calories_entry_dialog_cancel">Cancel</string>
 
+    <string name="workout_get_ready">Get ready!</string>
     <string name="workout_pause">Pause</string>
     <string name="workout_resume">Resume</string>
     <string name="workout_finish">Finish</string>

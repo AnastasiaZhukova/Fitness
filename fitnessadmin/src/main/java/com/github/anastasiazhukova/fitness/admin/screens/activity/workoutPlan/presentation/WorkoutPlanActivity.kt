@@ -2,6 +2,7 @@ package com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.p
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -16,11 +17,12 @@ import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerListener
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerSupport
 import com.github.anastasiazhukova.fitness.uicomponents.IElementsListListener
-import com.github.anastasiazhukova.fitness.utils.extensions.getActivityExtra
-import com.github.anastasiazhukova.fitness.utils.extensions.gone
-import com.github.anastasiazhukova.fitness.utils.extensions.startActivity
-import com.github.anastasiazhukova.fitness.utils.extensions.visible
+import com.github.anastasiazhukova.fitness.utils.SimpleTextWatcher
+import com.github.anastasiazhukova.fitness.utils.constants.Constants.String.EMPTY
+import com.github.anastasiazhukova.fitness.utils.extensions.*
 import kotlinx.android.synthetic.main.activity_workout_plan.*
+import kotlinx.android.synthetic.main.view_workout_calories_picker.*
+import kotlinx.android.synthetic.main.view_workout_level_picker.*
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
 
@@ -62,33 +64,50 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
             setDatePickerListener(this@WorkoutPlanActivity)
             setCurrentlySelectedDate(currentlySelectedDate)
         }
+
+        saveButton.setOnClickListener {
+            saveModel()
+        }
+
+        caloriesInput.addTextChangedListener(SimpleTextWatcher {
+            updateSaveButton()
+
+            if (!caloriesInput.isNullOrEmpty()) {
+                workoutPlanViewModel.setCalories(caloriesInput.asInt())
+            }
+        })
+        fitnessLevelGroup.setOnCheckedChangeListener { _, _ ->
+            updateSaveButton()
+
+            workoutPlanViewModel.setLevel(getFitnessLevelIntById(fitnessLevelGroup.checkedChipId))
+        }
     }
 
     override fun onResume() {
         super.onResume()
 
         workoutPlanViewModel.workoutPlanLiveData.observe(this, workoutPlanModelObserver)
-        workoutPlanViewModel.get(workoutPlanViewModel.currentlySelectedDate)
+        workoutPlanViewModel.getWorkoutPlanModel(workoutPlanViewModel.currentlySelectedDate)
     }
 
     override fun getFragmentManagerForDatePicker(): FragmentManager? = supportFragmentManager
 
-    override fun onDatePicked(date: Long) = workoutPlanViewModel.get(date)
+    override fun onDatePicked(date: Long) = workoutPlanViewModel.getWorkoutPlanModel(date)
 
     override fun onAddButtonClicked() {
         showEditExerciseDialog()
     }
 
     override fun onAdded(entry: ExerciseEntry) {
-        workoutPlanViewModel.add(entry)
+        workoutPlanViewModel.addExercise(entry)
     }
 
     override fun onEdited(entry: ExerciseEntry) {
-        workoutPlanViewModel.update(entry)
+        workoutPlanViewModel.updateExercise(entry)
     }
 
     override fun onDeleted(entry: ExerciseEntry) {
-        workoutPlanViewModel.delete(entry)
+        workoutPlanViewModel.deleteExercise(entry)
     }
 
     override fun onEditClicked(model: ExerciseEntry) {
@@ -107,6 +126,12 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
     private fun setLoadingState() {
         progress.visible()
         exerciseAdapter.items = emptyList()
+        caloriesInput.setText(EMPTY)
+        caloriesInput.disable()
+        totalTime.text = EMPTY
+        fitnessLevelGroup.check(View.NO_ID)
+        fitnessLevelGroup.disable()
+        elementsView.disableAddOption()
     }
 
     private fun setOperationInProgressState() {
@@ -117,6 +142,22 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
         progress.gone()
         model?.let {
             exerciseAdapter.items = it.entries
+
+            caloriesInput.setText(model.calories.toString())
+            caloriesInput.enable()
+
+            totalTime.text = String.format(
+                resources.getString(R.string.total_time),
+                model.duration.toReadableTime(
+                    resources.getString(R.string.sec),
+                    resources.getString(R.string.min)
+                )
+            )
+
+            fitnessLevelGroup.check(getFitnessLevelIdByInt(model.level))
+            fitnessLevelGroup.enable()
+
+            elementsView.enableAddOption()
         }
     }
 
@@ -138,6 +179,43 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
         }
     }
 
+    private fun saveModel() {
+        workoutPlanViewModel.save()
+    }
+
+    private fun updateSaveButton() {
+        if (isValidInput()) {
+            saveButton.enable()
+        } else {
+            saveButton.disable()
+        }
+    }
+
+    private fun isValidInput(): Boolean {
+        return !caloriesInput.isNullOrEmpty() && fitnessLevelGroup.checkedChipId != View.NO_ID && exerciseAdapter.items.isNotEmpty()
+    }
+
+    private fun getFitnessLevelIdByInt(level: Int): Int {
+        return when (level) {
+            1 -> R.id.fitnessLevel1
+            2 -> R.id.fitnessLevel2
+            3 -> R.id.fitnessLevel3
+            4 -> R.id.fitnessLevel4
+            5 -> R.id.fitnessLevel5
+            else -> R.id.fitnessLevel1
+        }
+    }
+
+    private fun getFitnessLevelIntById(id: Int): Int {
+        return when (id) {
+            R.id.fitnessLevel1 -> 1
+            R.id.fitnessLevel2 -> 2
+            R.id.fitnessLevel3 -> 3
+            R.id.fitnessLevel4 -> 4
+            R.id.fitnessLevel5 -> 5
+            else -> 1
+        }
+    }
 
     companion object Companion {
         fun start(clientDetailsParams: ClientDetailsParams, context: Context) {

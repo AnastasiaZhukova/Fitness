@@ -28,7 +28,7 @@ class WorkoutPlanDataSource(
                 WorkoutPlanModel(
                     id = generateId(),
                     date = date,
-                    entries = emptyList()
+                    entries = mutableListOf()
                 )
             } else {
                 workoutPlanDataModelMapper.invoke(dataModel)
@@ -76,6 +76,18 @@ class WorkoutPlanDataSource(
             workoutPlanDao.update(userId, mappedModel)
 
             return@withContext newModel
+        }
+
+    override suspend fun update(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): WorkoutPlanModel =
+        withContext(Dispatchers.IO) {
+            val mappedModel = workoutPlanModelDataMapper.invoke(workoutPlanModel)
+
+            workoutPlanDao.update(userId, mappedModel)
+
+            return@withContext workoutPlanModel
         }
 
     override suspend fun delete(

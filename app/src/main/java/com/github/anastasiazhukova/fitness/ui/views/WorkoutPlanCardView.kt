@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
+import com.github.anastasiazhukova.fitness.utils.extensions.toReadableTime
 import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.view_workout_plan_break.view.*
 import kotlinx.android.synthetic.main.view_workout_plan_ready.view.*
@@ -22,13 +23,17 @@ class WorkoutPlanCardView @JvmOverloads constructor(
     }
 
     fun setWorkoutBreakMode() {
-        isWorkoutReadyMode = false
-        changeMode(R.layout.view_workout_plan_break)
+        if (isWorkoutReadyMode) {
+            isWorkoutReadyMode = false
+            changeMode(R.layout.view_workout_plan_break)
+        }
     }
 
     fun setWorkoutReadyMode() {
-        isWorkoutReadyMode = true
-        changeMode(R.layout.view_workout_plan_ready)
+        if (!isWorkoutReadyMode) {
+            isWorkoutReadyMode = true
+            changeMode(R.layout.view_workout_plan_ready)
+        }
     }
 
     fun setNextWorkoutDay(workoutDay: String?) {
@@ -45,10 +50,6 @@ class WorkoutPlanCardView @JvmOverloads constructor(
     }
 
     fun setWorkoutCalories(calories: Int?) {
-        if (!isWorkoutReadyMode) {
-            setWorkoutReadyMode()
-        }
-
         if (calories == null || calories <= 0) {
             workoutCalories.gone()
         } else {
@@ -58,23 +59,20 @@ class WorkoutPlanCardView @JvmOverloads constructor(
     }
 
     fun setWorkoutDuration(duration: Int?) {
-        if (!isWorkoutReadyMode) {
-            setWorkoutReadyMode()
-        }
-
         if (duration == null || duration <= 0) {
             workoutDuration.gone()
         } else {
+            val readableTime = duration.toReadableTime(
+                resources.getString(R.string.sec),
+                resources.getString(R.string.min)
+            )
+
             workoutDuration.text =
-                context.getString(R.string.workout_duration_label).format(duration)
+                context.getString(R.string.workout_duration_label).format(readableTime)
         }
     }
 
     fun setWorkoutLevel(level: String?) {
-        if (!isWorkoutReadyMode) {
-            setWorkoutReadyMode()
-        }
-
         if (level.isNullOrEmpty()) {
             workoutLevel.gone()
         } else {

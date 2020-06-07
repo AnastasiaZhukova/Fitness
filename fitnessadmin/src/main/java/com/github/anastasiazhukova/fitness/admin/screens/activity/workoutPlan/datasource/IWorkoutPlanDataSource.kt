@@ -4,6 +4,7 @@ import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
 import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 
 interface IWorkoutPlanDataSource {
+
     suspend fun get(userId: String, date: Long): WorkoutPlanModel?
 
     suspend fun add(
@@ -16,6 +17,11 @@ interface IWorkoutPlanDataSource {
         userId: String,
         workoutPlanModel: WorkoutPlanModel,
         exerciseEntry: ExerciseEntry
+    ): WorkoutPlanModel
+
+    suspend fun update(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
     ): WorkoutPlanModel
 
     suspend fun delete(

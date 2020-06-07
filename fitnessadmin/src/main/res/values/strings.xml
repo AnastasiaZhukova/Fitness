@@ -6,6 +6,7 @@
     <string name="cal">cal</string>
     <string name="cm">cm</string>
     <string name="sec">sec</string>
+    <string name="min">min</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
     <string name="level_light">Light</string>
@@ -37,6 +38,7 @@
     <string name="edit_exercise_save">Save</string>
     <string name="edit_exercise_cancel">Cancel</string>
     <string name="edit_exercise_delete">Delete</string>
+    <string name="total_time">Total time: %1$s</string>
 
     <string name="authentication_login">Login</string>
     <string name="authentication_register">Register</string>

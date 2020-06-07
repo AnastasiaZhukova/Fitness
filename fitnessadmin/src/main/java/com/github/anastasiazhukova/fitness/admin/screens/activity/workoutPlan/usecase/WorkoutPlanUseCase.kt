@@ -34,7 +34,7 @@ class WorkoutPlanUseCase(
                 } ?: emptyList()
 
             val workoutPlanModelWithMappedEntries = workoutPlanModel?.copy(
-                entries = mappedEntries
+                entries = mappedEntries.toMutableList()
             )
 
             Result.Success(
@@ -75,6 +75,24 @@ class WorkoutPlanUseCase(
         try {
             val exercises = getExercises()
             val newWorkoutPlanModel = workoutPlanDataSource.update(userId, workoutPlanModel, exerciseEntry)
+
+            Result.Success(
+                WorkoutPlanPageModel(
+                    workoutPlanModel = newWorkoutPlanModel,
+                    exercises = exercises
+                )
+            )
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+
+    override suspend fun update(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): Result<WorkoutPlanPageModel> =
+        try {
+            val exercises = getExercises()
+            val newWorkoutPlanModel = workoutPlanDataSource.update(userId, workoutPlanModel)
 
             Result.Success(
                 WorkoutPlanPageModel(

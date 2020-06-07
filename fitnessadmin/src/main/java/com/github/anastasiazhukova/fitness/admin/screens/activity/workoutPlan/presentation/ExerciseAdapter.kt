@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.admin.R
 import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
-import com.github.anastasiazhukova.fitness.utils.extensions.toSecondsAsInt
+import com.github.anastasiazhukova.fitness.utils.extensions.toReadableTime
 import com.google.android.material.textview.MaterialTextView
 
 interface IExerciseClickListener {
@@ -44,12 +44,16 @@ class ExerciseAdapter : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>
     inner class ExerciseViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         private val secondsAsText = view.resources.getString(R.string.sec)
+        private val minutesAsText = view.resources.getString(R.string.min)
 
         fun bind(model: ExerciseEntry) {
             val exerciseName = view.findViewById<MaterialTextView>(R.id.exerciseName)
             val exerciseTime = view.findViewById<MaterialTextView>(R.id.exerciseTime)
             val editButton = view.findViewById<MaterialTextView>(R.id.editButton)
-            val exerciseSeconds = "${model.timeInMillis.toSecondsAsInt()} $secondsAsText"
+            val exerciseSeconds = model.timeInMillis.toReadableTime(
+                secondsAsText,
+                minutesAsText
+            )
 
             exerciseName.text = model.name
             exerciseTime.text = exerciseSeconds

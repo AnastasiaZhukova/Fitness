@@ -33,6 +33,11 @@ class WorkoutPlanFragment : Fragment(R.layout.fragment_workout_plan) {
             viewLifecycleOwner,
             workoutPlanUiStateObserver
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         workoutPlanViewModel.get()
     }
 
@@ -75,7 +80,7 @@ class WorkoutPlanFragment : Fragment(R.layout.fragment_workout_plan) {
         workoutCard.setWorkoutReadyMode()
         workoutCard.setWorkoutCalories(model.calories)
         workoutCard.setWorkoutDuration(model.duration)
-        workoutCard.setWorkoutLevel(model.level?.toString())
+        workoutCard.setWorkoutLevel(model.level.toString())
         workoutCard.setStartWorkoutButtonClickListener(startWorkoutListener)
     }
 

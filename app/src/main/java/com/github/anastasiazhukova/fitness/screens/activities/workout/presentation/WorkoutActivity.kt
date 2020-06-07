@@ -90,6 +90,7 @@ class WorkoutActivity : AppCompatActivity(R.layout.activity_workout) {
                 countDownTimer.setOnCountdownEndListener(null)
                 startExercise(workoutModel.items, 0)
             }
+            exerciseLabel.setText(R.string.workout_get_ready)
             countDownTimer.start(Constants.Time.SECONDS_5_IN_MILLIS)
         }
 

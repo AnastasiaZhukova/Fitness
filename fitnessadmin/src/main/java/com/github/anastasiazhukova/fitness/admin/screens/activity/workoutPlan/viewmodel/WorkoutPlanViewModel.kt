@@ -3,12 +3,13 @@ package com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.v
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.domain.WorkoutPlanPageModel
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.presentation.WorkoutPlanScreenUiState
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.usecase.IWorkoutPlanUseCase
 import com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails.ClientDetailsParams
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
 import com.github.anastasiazhukova.fitness.utils.Result
+import com.github.anastasiazhukova.fitness.utils.extensions.generateId
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,7 +37,7 @@ class WorkoutPlanViewModel(
         this.clientDetailsParams = clientDetailsParams
     }
 
-    fun get(date: Long) {
+    fun getWorkoutPlanModel(date: Long) {
         clientDetailsParams?.let { clientDetailsParams ->
             if (currentlySelectedDate != date || workoutPlanPageModel == null) {
                 currentlySelectedDate = date
@@ -53,39 +54,66 @@ class WorkoutPlanViewModel(
 
     fun getExercisesList() = workoutPlanPageModel?.exercises
 
-    fun add(exerciseEntry: ExerciseEntry) {
-        clientDetailsParams?.let { clientDetailsParams ->
-            coroutineScope.launch {
-                workoutPlanPageModel?.workoutPlanModel?.let {
-                    _workoutPlanLiveData.value = WorkoutPlanScreenUiState.OperationInProgress
-                    val result = workoutPlanUseCase.add(clientDetailsParams.id, it, exerciseEntry)
+    fun addExercise(exerciseEntry: ExerciseEntry) {
+        workoutPlanPageModel?.let { workoutPlanPageModel ->
+            workoutPlanPageModel.workoutPlanModel?.apply {
+                val newExerciseEntry = exerciseEntry.copy(
+                    id = generateId()
+                )
 
-                    pushResult(result)
-                }
+                entries.add(newExerciseEntry)
+                duration += exerciseEntry.timeInMillis
+                pushResult(Result.Success(workoutPlanPageModel))
             }
         }
     }
 
-    fun update(exerciseEntry: ExerciseEntry) {
-        clientDetailsParams?.let { clientDetailsParams ->
-            coroutineScope.launch {
-                workoutPlanPageModel?.workoutPlanModel?.let {
-                    _workoutPlanLiveData.value = WorkoutPlanScreenUiState.OperationInProgress
-                    val result = workoutPlanUseCase.update(clientDetailsParams.id, it, exerciseEntry)
+    fun updateExercise(exerciseEntry: ExerciseEntry) {
+        workoutPlanPageModel?.let { workoutPlanPageModel ->
+            workoutPlanPageModel.workoutPlanModel?.apply {
+                val indexToReplace = entries.indexOfFirst { it.id == exerciseEntry.id }
+                duration -= entries[indexToReplace].timeInMillis
+                duration += exerciseEntry.timeInMillis
+                entries[indexToReplace] = exerciseEntry
 
-                    pushResult(result)
-                }
+                pushResult(Result.Success(workoutPlanPageModel))
             }
         }
     }
 
-    fun delete(exerciseEntry: ExerciseEntry) {
+    fun deleteExercise(exerciseEntry: ExerciseEntry) {
+        workoutPlanPageModel?.let { workoutPlanPageModel ->
+            workoutPlanPageModel.workoutPlanModel?.apply {
+                entries.removeIf { it.id == exerciseEntry.id }
+                duration -= exerciseEntry.timeInMillis
+
+                pushResult(Result.Success(workoutPlanPageModel))
+            }
+        }
+    }
+
+    fun setCalories(calories: Int) {
+        workoutPlanPageModel?.let { workoutPlanPageModel ->
+            workoutPlanPageModel.workoutPlanModel?.apply {
+                this.calories = calories
+            }
+        }
+    }
+
+    fun setLevel(level: Int) {
+        workoutPlanPageModel?.let { workoutPlanPageModel ->
+            workoutPlanPageModel.workoutPlanModel?.apply {
+                this.level = level
+            }
+        }
+    }
+
+    fun save() {
         clientDetailsParams?.let { clientDetailsParams ->
             coroutineScope.launch {
                 workoutPlanPageModel?.workoutPlanModel?.let {
                     _workoutPlanLiveData.value = WorkoutPlanScreenUiState.OperationInProgress
-                    val result =
-                        workoutPlanUseCase.delete(clientDetailsParams.id, it, exerciseEntry)
+                    val result = workoutPlanUseCase.update(clientDetailsParams.id, it)
 
                     pushResult(result)
                 }
@@ -97,10 +125,13 @@ class WorkoutPlanViewModel(
         when (result) {
             is Result.Success -> {
                 workoutPlanPageModel = result.value
-                _workoutPlanLiveData.value = WorkoutPlanScreenUiState.Success(workoutPlanPageModel)
+                _workoutPlanLiveData.value =
+                    WorkoutPlanScreenUiState.Success(workoutPlanPageModel)
             }
             is Result.Error -> {
-                _workoutPlanLiveData.value = WorkoutPlanScreenUiState.Error(result.exception)
+                workoutPlanPageModel = null
+                _workoutPlanLiveData.value =
+                    WorkoutPlanScreenUiState.Error(result.exception)
             }
         }
 

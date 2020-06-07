@@ -13,3 +13,19 @@ fun Int.toMillisAsInt(): Int {
 fun Int.toSecondsAsInt(): Int {
     return (this / Constants.Time.MILLIS_IN_SECOND).toInt()
 }
+
+fun Int.toReadableTime(secondsLabel: String, minutesLabel: String): String {
+    val seconds = this.toSecondsAsInt()
+
+    return if (seconds < 60) {
+        "$seconds $secondsLabel"
+    } else {
+        val minutes = "${seconds / 60} $minutesLabel"
+
+        return if (seconds % 60 > 0) {
+            "$minutes ${seconds % 60} $secondsLabel"
+        } else {
+            minutes
+        }
+    }
+}

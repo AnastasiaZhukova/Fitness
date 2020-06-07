@@ -23,10 +23,10 @@ class WorkoutPlanDataModelMapper : IMapper<WorkoutPlanDataModel, WorkoutPlanMode
                 id = data.id,
                 date = data.date,
                 preview = data.preview,
-                duration = data.duration,
-                calories = data.calories,
-                level = data.level,
-                entries = exerciseEntries
+                duration = data.duration ?: 0,
+                calories = data.calories ?: 0,
+                level = data.level ?: 1,
+                entries = exerciseEntries.toMutableList()
             )
         } else {
             null

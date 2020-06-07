@@ -6,10 +6,10 @@ data class WorkoutPlanModel(
     val id: String = EMPTY,
     val date: Long = -1,
     val preview: String? = EMPTY,
-    val duration: Int? = 0,
-    val calories: Int? = 0,
-    val level: Int? = -1,
-    val entries: List<ExerciseEntry> = emptyList()
+    var duration: Int = 0,
+    var calories: Int = 0,
+    var level: Int = 1,
+    val entries: MutableList<ExerciseEntry> = mutableListOf()
 )
 
 data class ExerciseEntry(

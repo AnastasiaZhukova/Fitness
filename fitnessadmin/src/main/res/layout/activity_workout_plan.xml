@@ -8,50 +8,37 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/clientName"
         style="@style/SectionLabelTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:ellipsize="marquee"
+        android:gravity="center_vertical"
         android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@id/datePicker"
-        app:layout_constraintEnd_toStartOf="@id/saveButton"
+        app:layout_constraintBottom_toBottomOf="@id/datePicker"
+        app:layout_constraintEnd_toStartOf="@id/datePicker"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/datePicker"
         tools:text="Anastasiya" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/workout_plan_save"
-        app:layout_constraintBottom_toBottomOf="@id/clientName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/clientName"
-        app:layout_constraintTop_toTopOf="@id/clientName" />
 
     <com.github.anastasiazhukova.fitness.uicomponents.DatePickerView
         android:id="@+id/datePicker"
         style="@style/AppRoundedCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/defaultMargin"
-        android:layout_marginTop="@dimen/defaultMargin"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="@dimen/defaultMargin"
-        app:layout_constraintBottom_toTopOf="@id/levelPicker"
+        app:layout_constraintBottom_toTopOf="@id/caloriesPicker"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/saveButton" />
-
+        app:layout_constraintStart_toEndOf="@id/clientName"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/caloriesPicker"
         layout="@layout/view_workout_calories_picker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@id/levelPicker"
@@ -64,12 +51,24 @@
         layout="@layout/view_workout_level_picker"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@id/elementsView"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/totalTime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/caloriesPicker"
         app:layout_constraintTop_toBottomOf="@id/datePicker" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/totalTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/elementsView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/levelPicker"
+        tools:text="Total time: 30 min " />
 
     <com.github.anastasiazhukova.fitness.uicomponents.ElementsListView
         android:id="@+id/elementsView"
@@ -77,13 +76,27 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/defaultMargin"
-        android:layout_marginTop="@dimen/defaultMargin"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/defaultMargin"
-        android:layout_marginBottom="@dimen/defaultMargin"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalTime" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"
+        android:text="@string/workout_plan_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/levelPicker" />
+        app:layout_constraintTop_toBottomOf="@id/elementsView" />
 
     <ProgressBar
         android:id="@+id/progress"
