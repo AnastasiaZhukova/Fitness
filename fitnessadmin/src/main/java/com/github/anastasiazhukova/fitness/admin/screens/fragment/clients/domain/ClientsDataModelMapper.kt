@@ -10,6 +10,7 @@ class ClientsDataModelMapper : IMapper<UserInfoDataModel, ClientModel> {
         return ClientModel(
             id = userInfoDataModel.id,
             name = userInfoDataModel.name ?: EMPTY,
+            trainerNickname = userInfoDataModel.trainerNickname ?: EMPTY,
             gender = userInfoDataModel.gender,
             height = userInfoDataModel.userParams?.height,
             weight = userInfoDataModel.userParams?.weight,

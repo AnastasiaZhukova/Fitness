@@ -47,7 +47,9 @@ class ChatActivity : AppCompatActivity(R.layout.activity_chat) {
         messageAdapter = ChatMessageAdapter(chatViewModel.getCurrentUserId())
         messages.apply {
             adapter = messageAdapter
-            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, true)
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, true).apply {
+                stackFromEnd = true
+            }
         }
 
         sendButton.setOnClickListener {

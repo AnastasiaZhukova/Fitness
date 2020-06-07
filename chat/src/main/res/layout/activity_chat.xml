@@ -29,12 +29,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pageTitle"
-        tools:listitem="@layout/view_adapter_incoming_message" />
+        tools:listitem="@layout/view_adapter_outcoming_message" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textMessage"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="48dp"
         android:hint="@string/hint_message"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

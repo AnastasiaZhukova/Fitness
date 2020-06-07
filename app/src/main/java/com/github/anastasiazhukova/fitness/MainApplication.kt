@@ -2,6 +2,7 @@ package com.github.anastasiazhukova.fitness
 
 import android.app.Application
 import com.github.anastasiazhukova.fitness.authentication.AuthenticationDependency
+import com.github.anastasiazhukova.fitness.chat.ChatScreenDependency
 import com.github.anastasiazhukova.fitness.datasource.DatasourceDependency
 
 import com.github.anastasiazhukova.fitness.screens.activities.workout.WorkoutScreenDependency
@@ -32,7 +33,8 @@ class MainApplication : Application() {
                 StatisticsScreenDependency.module,
 
                 DatasourceDependency.module,
-                WorkoutScreenDependency.module
+                WorkoutScreenDependency.module,
+                ChatScreenDependency.module
             )
         }
     }

@@ -1,7 +1,6 @@
 package com.github.anastasiazhukova.fitness.datasource.user.info
 
-import com.github.anastasiazhukova.fitness.datasource.trainer.TrainerInfoDaoConstants.ID
-import com.github.anastasiazhukova.fitness.datasource.trainer.TrainerInfoDaoConstants.NAME
+
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.BIRTHDAY
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.FITNESS_LEVEL
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.GENDER
@@ -9,6 +8,9 @@ import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConst
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.GOAL_WATER
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.GOAL_WEIGHT
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.HEIGHT
+import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.ID
+import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.NAME
+import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.TRAINER_NICKNAME
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.USER_GOAL
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.USER_PARAMS
 import com.github.anastasiazhukova.fitness.datasource.user.info.UserInfoDaoConstants.WEIGHT
@@ -21,6 +23,9 @@ data class UserInfoDataModel(
 
     @SerializedName(NAME)
     val name: String? = null,
+
+    @SerializedName(TRAINER_NICKNAME)
+    val trainerNickname: String? = null,
 
     @SerializedName(BIRTHDAY)
     val birthday: Long? = null,

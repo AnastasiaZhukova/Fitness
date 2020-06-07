@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 data class ClientDetailsParams(
     val id: String,
     val name: String,
+    val trainerNickname: String,
     val gender: Boolean,
     val height: Int?,
     val weight: Int?,

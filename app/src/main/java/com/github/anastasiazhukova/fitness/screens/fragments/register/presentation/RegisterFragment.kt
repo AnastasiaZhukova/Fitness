@@ -65,6 +65,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             name.isNullOrEmpty() -> {
                 showError(R.string.authentication_register_name_error)
             }
+            trainerNickname.isNullOrEmpty() -> {
+                showError(R.string.authentication_trainer_nickname)
+            }
             genderGroup.checkedChipId == View.NO_ID -> {
                 showError(R.string.authentication_register_gender_error)
             }
@@ -127,6 +130,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     private fun buildUserInfoParams(): UserInfoParams =
         UserInfoParams(
             name = name.getTextAsString(),
+            trainerNickname = trainerNickname.getTextAsString(),
             gender = getGenderValue(),
             height = height.asInt(),
             weight = weight.asInt(),

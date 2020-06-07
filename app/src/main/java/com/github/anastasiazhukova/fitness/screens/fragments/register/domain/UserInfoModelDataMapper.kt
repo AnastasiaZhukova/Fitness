@@ -10,6 +10,7 @@ class UserInfoModelDataMapper : IMapper<UserInfo, UserInfoDataModel> {
         return UserInfoDataModel(
             id = userInfo.id,
             name = userInfo.name,
+            trainerNickname = userInfo.trainerNickname,
             gender = userInfo.gender,
             userParams = UserParams(
                 height = userInfo.height,

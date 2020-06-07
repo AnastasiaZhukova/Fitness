@@ -1,4 +1,4 @@
-package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.usecase
+package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.usecase.workoutPlan
 
 import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.utils.Result

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.chat.R
 import com.github.anastasiazhukova.fitness.chat.domain.ChatMessageModel
+import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.toReadableTimeAndDate
 import com.google.android.material.textview.MaterialTextView
 
@@ -21,9 +22,9 @@ class ChatMessageAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val holderLayoutId = if (viewType == VIEW_TYPE_OUTCOMING) {
-            R.layout.view_adapter_outcoming_message
-        } else {
             R.layout.view_adapter_incoming_message
+        } else {
+            R.layout.view_adapter_outcoming_message
         }
 
         val view = LayoutInflater
@@ -40,7 +41,7 @@ class ChatMessageAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position < items.size && items[position].id == currentUserId) {
+        return if (position < items.size && items[position].messageSender == currentUserId) {
             VIEW_TYPE_OUTCOMING
         } else {
             VIEW_TYPE_INCOMING

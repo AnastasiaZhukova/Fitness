@@ -5,6 +5,7 @@ import com.github.anastasiazhukova.fitness.admin.screens.common.clientDetails.Cl
 data class ClientModel(
     val id: String,
     val name: String,
+    val trainerNickname: String,
     val gender: Boolean,
     val height: Int?,
     val weight: Int?,
@@ -18,6 +19,7 @@ fun ClientModel.toClientDetailsParams(): ClientDetailsParams =
     ClientDetailsParams(
         id = id,
         name = name,
+        trainerNickname = trainerNickname,
         gender = gender,
         height = height,
         weight = weight,

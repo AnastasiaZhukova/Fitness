@@ -11,6 +11,8 @@
     <string name="workout_break_text">Nice job! Take a break!</string>
     <string name="workout_break_text_with_param">Next workout is on %s</string>
     <string name="workout_ready_text">Start</string>
+    <string name="chat_with_trainer">Chat with trainer</string>
+    <string name="trainer">trainer</string>
 
     <string name="my_goal_section_label">My goal</string>
     <string name="weight_label">Weight</string>
@@ -20,7 +22,6 @@
     <string name="my_food_section_label">My food</string>
     <string name="my_food_section_add">Add</string>
     <string name="my_food_section_view">View</string>
-
 
     <string name="my_water_section_label">My water</string>
     <string name="my_water_section_add">Add</string>
@@ -40,6 +41,7 @@
     <string name="authentication_password">Password</string>
     <string name="authentication_repeat_password">Repeat password</string>
     <string name="authentication_name">Name</string>
+    <string name="authentication_trainer_nickname">Trainer nickname</string>
     <string name="authentication_gender">Gender</string>
     <string name="authentication_gender_female">Female</string>
     <string name="authentication_gender_male">Male</string>
@@ -64,6 +66,7 @@
     <string name="authentication_register_password_error">Please enter password. Min length is 6 symbols</string>
     <string name="authentication_register_password_repeat_error">Passwords do not match</string>
     <string name="authentication_register_name_error">Please enter your name</string>
+    <string name="authentication_register_trainer_nickname_error">Please enter your trainer nickname</string>
     <string name="authentication_register_gender_error">Please select your gender</string>
     <string name="authentication_register_weight_error">Please enter your weight</string>
     <string name="authentication_register_height_error">Please enter your height</string>

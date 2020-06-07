@@ -1,4 +1,4 @@
-package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.datasource
+package com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.datasource.workoutPlan
 
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.IWorkoutPlanDao

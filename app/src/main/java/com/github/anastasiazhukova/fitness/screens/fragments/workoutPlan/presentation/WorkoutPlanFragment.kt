@@ -6,10 +6,12 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.github.anastasiazhukova.fitness.R
+import com.github.anastasiazhukova.fitness.chat.presentation.ChatActivity
 import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.screens.activities.workout.presentation.WorkoutActivity
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.viewmodel.WorkoutPlanViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
+import com.github.anastasiazhukova.fitness.utils.extensions.invisible
 import com.github.anastasiazhukova.fitness.utils.extensions.visible
 import kotlinx.android.synthetic.main.fragment_workout_plan.*
 import org.koin.androidx.scope.lifecycleScope
@@ -33,6 +35,10 @@ class WorkoutPlanFragment : Fragment(R.layout.fragment_workout_plan) {
             viewLifecycleOwner,
             workoutPlanUiStateObserver
         )
+
+        chatButton.setOnClickListener {
+            startChat()
+        }
     }
 
     override fun onResume() {
@@ -50,7 +56,7 @@ class WorkoutPlanFragment : Fragment(R.layout.fragment_workout_plan) {
     }
 
     private fun setLoadingState() {
-        workoutCard.gone()
+        workoutCard.invisible()
         progress.visible()
         Log.d(TAG, "setLoadingState: ")
     }
@@ -86,9 +92,16 @@ class WorkoutPlanFragment : Fragment(R.layout.fragment_workout_plan) {
 
     private fun startWorkout() {
         context?.let {
-
             workoutPlanViewModel.getWorkoutParams()?.let { params ->
                 WorkoutActivity.start(it, params)
+            }
+        }
+    }
+
+    private fun startChat() {
+        context?.let {
+            workoutPlanViewModel.getChatParams(it)?.let { params ->
+                ChatActivity.start(params, it)
             }
         }
     }

@@ -4,6 +4,7 @@ import com.github.anastasiazhukova.fitness.screens.fragments.register.domain.Use
 
 data class UserInfoParams(
     val name: String,
+    val trainerNickname: String,
     val gender: Boolean,
     val height: Int,
     val weight: Int,
@@ -16,6 +17,7 @@ fun UserInfoParams.toUserInfo(userId: String) =
     UserInfo(
         id = userId,
         name = this.name,
+        trainerNickname = this.trainerNickname,
         gender = this.gender,
         height = this.height,
         weight = this.weight,
