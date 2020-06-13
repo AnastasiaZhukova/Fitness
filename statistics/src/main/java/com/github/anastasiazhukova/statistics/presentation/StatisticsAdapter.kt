@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.github.anastasiazhukova.fitness.utils.constants.Constants.String.EMPTY
 import com.github.anastasiazhukova.fitness.utils.extensions.gone
 import com.github.anastasiazhukova.fitness.utils.extensions.invisible
 import com.github.anastasiazhukova.fitness.utils.extensions.toShortReadableDate
@@ -111,7 +112,14 @@ class StatisticsAdapter : RecyclerView.Adapter<StatisticsAdapter.StatisticsViewH
             private val model: StatisticsModel
         ) : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
-                return model.values[value.toInt()].date.toShortReadableDate()
+                val index = value.toInt()
+                val items = model.values
+
+                return if (index < items.size) {
+                    items[index].date.toShortReadableDate()
+                } else {
+                    EMPTY
+                }
             }
         }
     }

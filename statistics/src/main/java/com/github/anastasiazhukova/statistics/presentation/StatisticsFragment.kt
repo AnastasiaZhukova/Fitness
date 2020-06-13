@@ -28,20 +28,22 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics), IValueSelecte
     private val statisticsModelObserver = Observer<StatisticsPageUiState> {
         updateUi(it)
     }
-
     private val statisticsAdapter = StatisticsAdapter()
+    private var isRefreshable = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments?.getFragmentExtra<StatisticsPageParams>()?.let {
             statisticsViewModel.setParams(it)
+            isRefreshable = it.isRefreshable
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        refreshLayout.isEnabled = isRefreshable
         refreshLayout.setOnRefreshListener {
             statisticsViewModel.load()
         }

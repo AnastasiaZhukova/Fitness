@@ -57,6 +57,7 @@ dependencies {
     implementation(project(Module.authentication))
     implementation(project(Module.chat))
     implementation(project(Module.datasource))
+    implementation(project(Module.statistics))
     implementation(project(Module.utils))
     implementation(project(Module.uiComponents))
 }

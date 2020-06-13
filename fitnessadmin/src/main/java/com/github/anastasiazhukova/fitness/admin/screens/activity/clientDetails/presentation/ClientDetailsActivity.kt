@@ -11,6 +11,8 @@ import com.github.anastasiazhukova.fitness.chat.presentation.ChatActivity
 import com.github.anastasiazhukova.fitness.chat.utils.getChatId
 import com.github.anastasiazhukova.fitness.utils.extensions.getActivityExtra
 import com.github.anastasiazhukova.fitness.utils.extensions.startActivity
+import com.github.anastasiazhukova.statistics.domain.StatisticsPageParams
+import com.github.anastasiazhukova.statistics.presentation.StatisticsFragment
 import kotlinx.android.synthetic.main.activity_client_details.*
 
 class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details) {
@@ -37,6 +39,14 @@ class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details
         manageWorkoutPlanButton.setOnClickListener {
             startWorkoutPlanActivity()
         }
+
+        supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.statisticsContainer,
+                StatisticsFragment.newInstance(StatisticsPageParams(clientDetailsParams.id, false))
+            )
+            .commit()
+
     }
 
     private fun initClientGoals(clientDetailsParams: ClientDetailsParams) {

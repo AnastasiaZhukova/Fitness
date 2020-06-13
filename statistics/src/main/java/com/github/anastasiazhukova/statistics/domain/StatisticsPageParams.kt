@@ -5,5 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class StatisticsPageParams(
-    val clientId: String
+    val clientId: String,
+    val isRefreshable: Boolean = true
 ) : Parcelable

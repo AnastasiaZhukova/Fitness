@@ -9,6 +9,7 @@ import com.github.anastasiazhukova.fitness.authentication.AuthenticationDependen
 import com.github.anastasiazhukova.fitness.chat.ChatScreenDependency
 import com.github.anastasiazhukova.fitness.datasource.DatasourceDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.register.RegisterScreenDependency
+import com.github.anastasiazhukova.statistics.StatisticsScreenDependency
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -27,6 +28,7 @@ class MainApplication : Application() {
                 DatasourceDependency.module,
                 ExerciseScreenDependency.module,
                 WorkoutPlanScreenDependency.module,
+                StatisticsScreenDependency.module,
                 ChatScreenDependency.module
             )
         }
