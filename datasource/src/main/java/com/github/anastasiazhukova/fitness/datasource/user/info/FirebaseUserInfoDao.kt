@@ -21,10 +21,10 @@ class FirebaseUserInfoDao : IUserInfoDao {
             .await()
             ?.toObject(UserInfoDataModel::class.java)
 
-    override suspend fun getByTrainerId(trainerId: String): List<UserInfoDataModel> =
+    override suspend fun getByTrainerNickname(trainerNickname: String): List<UserInfoDataModel> =
         firestore
             .collection(USERS_COLLECTION)
-            .whereEqualTo(TRAINER_NICKNAME, trainerId)
+            .whereEqualTo(TRAINER_NICKNAME, trainerNickname)
             .get()
             .await()
             .toObjects(UserInfoDataModel::class.java)

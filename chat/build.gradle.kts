@@ -38,6 +38,7 @@ dependencies {
     implementation(Libraries.kotlinCoroutinesIntegration)
     implementation(Libraries.materialComponents)
     implementation(Libraries.recyclerView)
+    implementation(Libraries.swipeRefresh)
 
     implementation(project(Module.authentication))
     implementation(project(Module.datasource))

@@ -42,5 +42,7 @@ object Version {
 
     const val recyclerview = "1.1.0"
 
+    const val swipeRefresh = "1.0.0"
+
     const val viewModel = "2.2.0"
 }

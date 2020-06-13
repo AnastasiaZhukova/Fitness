@@ -29,6 +29,10 @@ class ClientsFragment : Fragment(R.layout.fragment_clients), IClientClickListene
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        refreshLayout.setOnRefreshListener {
+            clientsViewModel.load()
+        }
+
         clientsAdapter.setClientClickListener(this)
 
         clientsList?.apply {
@@ -63,11 +67,18 @@ class ClientsFragment : Fragment(R.layout.fragment_clients), IClientClickListene
 
     private fun setLoadingState() {
         progress.visible()
+        refreshLayout.isRefreshing = false
+        noDataMessage.gone()
         clientsAdapter.items = emptyList()
     }
 
     private fun setModel(model: List<ClientModel>) {
         progress.gone()
+
+        if (model.isEmpty()) {
+            noDataMessage.visible()
+        }
+
         clientsAdapter.items = model
     }
 

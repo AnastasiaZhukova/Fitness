@@ -54,16 +54,6 @@
                 android:lines="1"
                 android:maxLines="1" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/trainerNickname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="@string/authentication_trainer_nickname"
-                android:inputType="text"
-                android:lines="1"
-                android:maxLines="1" />
-
             <include layout="@layout/view_gender_picker" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -101,6 +91,16 @@
                 android:layout_marginBottom="8dp"
                 android:hint="@string/authentication_fitness_goal_water"
                 android:inputType="number" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/trainerNickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/authentication_trainer_nickname"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1" />
         </LinearLayout>
 
     </ScrollView>

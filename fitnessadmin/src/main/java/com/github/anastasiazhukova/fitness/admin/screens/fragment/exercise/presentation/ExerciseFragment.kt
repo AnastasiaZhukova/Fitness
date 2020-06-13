@@ -29,6 +29,10 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        refreshLayout.setOnRefreshListener {
+            exerciseViewModel.load()
+        }
+
         exerciseAdapter.setExerciseEditClickListener(this)
         addButton.setOnClickListener {
             onAddClicked()
@@ -99,6 +103,8 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
 
     private fun setLoadingState() {
         progress.visible()
+        refreshLayout.isRefreshing = false
+        noDataMessage.gone()
         exerciseAdapter.items = emptyList()
     }
 
@@ -108,6 +114,11 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
 
     private fun setModel(model: List<ExerciseModel>) {
         progress.gone()
+
+        if (model.isEmpty()) {
+            noDataMessage.visible()
+        }
+
         exerciseAdapter.items = model
     }
 

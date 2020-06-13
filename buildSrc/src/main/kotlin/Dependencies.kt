@@ -44,6 +44,8 @@ object Libraries {
 
     const val recyclerView = "androidx.recyclerview:recyclerview:${Version.recyclerview}"
 
+    const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swipeRefresh}"
+
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.viewModel}"
     const val viewModelLifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Version.viewModel}"
 }

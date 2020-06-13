@@ -49,7 +49,9 @@ dependencies {
     implementation(Libraries.mpChart)
 
     implementation(Libraries.recyclerView)
-    
+
+    implementation(Libraries.swipeRefresh)
+
     implementation(Libraries.viewModel)
 
     implementation(project(Module.authentication))

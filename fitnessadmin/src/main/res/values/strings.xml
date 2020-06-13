@@ -29,6 +29,8 @@
 
     <string name="edit">Edit</string>
 
+    <string name="no_data_message">No data</string>
+
     <string name="edit_exercise_title_add">Add exercise</string>
     <string name="edit_exercise_title_edit">Edit exercise</string>
     <string name="edit_exercise_name_hint">Name</string>
