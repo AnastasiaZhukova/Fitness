@@ -95,8 +95,22 @@
         android:text="@string/workout_plan_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/deleteButton"
         app:layout_constraintTop_toBottomOf="@id/elementsView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:enabled="true"
+        android:text="@string/workout_plan_delete"
+        android:textColor="@color/error"
+        app:layout_constraintBottom_toBottomOf="@id/saveButton"
+        app:layout_constraintEnd_toStartOf="@id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/saveButton" />
 
     <ProgressBar
         android:id="@+id/progress"

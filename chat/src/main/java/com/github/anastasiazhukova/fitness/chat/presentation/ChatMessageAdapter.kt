@@ -22,9 +22,9 @@ class ChatMessageAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val holderLayoutId = if (viewType == VIEW_TYPE_OUTCOMING) {
-            R.layout.view_adapter_incoming_message
-        } else {
             R.layout.view_adapter_outcoming_message
+        } else {
+            R.layout.view_adapter_incoming_message
         }
 
         val view = LayoutInflater

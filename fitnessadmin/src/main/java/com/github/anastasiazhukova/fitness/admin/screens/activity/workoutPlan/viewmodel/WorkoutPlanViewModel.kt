@@ -121,6 +121,20 @@ class WorkoutPlanViewModel(
         }
     }
 
+    fun delete() {
+        clientDetailsParams?.let { clientDetailsParams ->
+            coroutineScope.launch {
+                workoutPlanPageModel?.workoutPlanModel?.let {
+                    _workoutPlanLiveData.value = WorkoutPlanScreenUiState.OperationInProgress
+                    val result = workoutPlanUseCase.delete(clientDetailsParams.id, it)
+
+                    pushResult(result)
+                }
+            }
+        }
+    }
+
+
     private fun pushResult(result: Result<WorkoutPlanPageModel>) =
         when (result) {
             is Result.Success -> {

@@ -112,4 +112,14 @@ class WorkoutPlanDataSource(
 
             return@withContext newModel
         }
+
+    override suspend fun delete(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): WorkoutPlanModel? =
+        withContext(Dispatchers.IO) {
+            workoutPlanDao.delete(userId, workoutPlanModel.id)
+
+            return@withContext get(userId, workoutPlanModel.date)
+        }
 }

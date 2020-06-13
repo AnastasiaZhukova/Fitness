@@ -69,6 +69,10 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
             saveModel()
         }
 
+        deleteButton.setOnClickListener {
+            deleteModel()
+        }
+
         caloriesInput.addTextChangedListener(SimpleTextWatcher {
             updateSaveButton()
 
@@ -181,6 +185,10 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
 
     private fun saveModel() {
         workoutPlanViewModel.save()
+    }
+
+    private fun deleteModel() {
+        workoutPlanViewModel.delete()
     }
 
     private fun updateSaveButton() {

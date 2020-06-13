@@ -29,4 +29,9 @@ interface IWorkoutPlanDataSource {
         workoutPlanModel: WorkoutPlanModel,
         exerciseEntry: ExerciseEntry
     ): WorkoutPlanModel
+
+    suspend fun delete(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): WorkoutPlanModel?
 }

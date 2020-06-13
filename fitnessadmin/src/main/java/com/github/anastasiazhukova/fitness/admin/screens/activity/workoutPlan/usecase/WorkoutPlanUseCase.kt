@@ -1,11 +1,11 @@
 package com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.usecase
 
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.datasource.IWorkoutPlanDataSource
-import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
-import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.admin.screens.activity.workoutPlan.domain.WorkoutPlanPageModel
 import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.datasource.IExerciseDataSource
 import com.github.anastasiazhukova.fitness.admin.screens.common.exercise.domain.ExerciseModel
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
+import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.utils.Result
 
 class WorkoutPlanUseCase(
@@ -55,7 +55,8 @@ class WorkoutPlanUseCase(
     ): Result<WorkoutPlanPageModel> =
         try {
             val exercises = getExercises()
-            val newWorkoutPlanModel = workoutPlanDataSource.add(userId, workoutPlanModel, exerciseEntry)
+            val newWorkoutPlanModel =
+                workoutPlanDataSource.add(userId, workoutPlanModel, exerciseEntry)
 
             Result.Success(
                 WorkoutPlanPageModel(
@@ -74,7 +75,8 @@ class WorkoutPlanUseCase(
     ): Result<WorkoutPlanPageModel> =
         try {
             val exercises = getExercises()
-            val newWorkoutPlanModel = workoutPlanDataSource.update(userId, workoutPlanModel, exerciseEntry)
+            val newWorkoutPlanModel =
+                workoutPlanDataSource.update(userId, workoutPlanModel, exerciseEntry)
 
             Result.Success(
                 WorkoutPlanPageModel(
@@ -113,6 +115,25 @@ class WorkoutPlanUseCase(
             val exercises = getExercises()
             val newWorkoutPlanModel =
                 workoutPlanDataSource.delete(userId, workoutPlanModel, exerciseEntry)
+
+            Result.Success(
+                WorkoutPlanPageModel(
+                    workoutPlanModel = newWorkoutPlanModel,
+                    exercises = exercises
+                )
+            )
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+
+    override suspend fun delete(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): Result<WorkoutPlanPageModel> =
+        try {
+            val exercises = getExercises()
+            val newWorkoutPlanModel =
+                workoutPlanDataSource.delete(userId, workoutPlanModel)
 
             Result.Success(
                 WorkoutPlanPageModel(

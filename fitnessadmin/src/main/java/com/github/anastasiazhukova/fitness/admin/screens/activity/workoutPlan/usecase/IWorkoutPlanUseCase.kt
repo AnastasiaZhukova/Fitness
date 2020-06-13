@@ -31,4 +31,9 @@ interface IWorkoutPlanUseCase {
         workoutPlanModel: WorkoutPlanModel,
         exerciseEntry: ExerciseEntry
     ): Result<WorkoutPlanPageModel>
+
+    suspend fun delete(
+        userId: String,
+        workoutPlanModel: WorkoutPlanModel
+    ): Result<WorkoutPlanPageModel>
 }

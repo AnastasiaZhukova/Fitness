@@ -1,6 +1,7 @@
 package com.github.anastasiazhukova.fitness.chat.presentation
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -27,6 +28,7 @@ class ChatActivity : AppCompatActivity(R.layout.activity_chat) {
         override fun onChanged(t: ChatModel?) {
             Log.d(TAG, "onChanged: t = $t")
             messageAdapter.items = t?.messages ?: emptyList()
+            messages.scrollToPosition(0)
         }
     }
     private lateinit var messageAdapter: ChatMessageAdapter
@@ -64,6 +66,10 @@ class ChatActivity : AppCompatActivity(R.layout.activity_chat) {
                 sendButton.disable()
             }
         })
+
+        messages.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+            messages?.scrollToPosition(0)
+        }
     }
 
     override fun onResume() {

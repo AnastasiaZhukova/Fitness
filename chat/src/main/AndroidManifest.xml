@@ -2,6 +2,7 @@
     package="com.github.anastasiazhukova.fitness.chat">
 
     <application>
-        <activity android:name=".presentation.ChatActivity" />
+        <activity android:name=".presentation.ChatActivity"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 </manifest>
