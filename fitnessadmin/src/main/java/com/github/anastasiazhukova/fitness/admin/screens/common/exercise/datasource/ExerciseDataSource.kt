@@ -22,6 +22,7 @@ class ExerciseDataSource(
                 val dataModel = exerciseDao.getByAuthorId(userId)
 
                 return@withContext dataModel.mapNotNull { exerciseDataModelMapper.invoke(it) }
+                    .sortedBy { it.name }
             }
 
             emptyList<ExerciseModel>()
