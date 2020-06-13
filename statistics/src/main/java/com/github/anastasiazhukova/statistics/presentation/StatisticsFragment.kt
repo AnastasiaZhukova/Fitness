@@ -1,7 +1,6 @@
 package com.github.anastasiazhukova.statistics.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -59,10 +58,10 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics), IValueSelecte
         statisticsViewModel.load()
     }
 
-    val TAG = "DebugTag StatisticsFragment";
-
     override fun onValueSelected(entry: StatisticsEntry) {
-        Log.d(TAG, "onValueSelected: entry = $entry")
+        if (entry !is StatisticsEntry.Weight) {
+            showDetailsDialog(entry)
+        }
     }
 
     private fun updateUi(uiState: StatisticsPageUiState) {
@@ -97,6 +96,15 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics), IValueSelecte
     private fun setError(e: Throwable) {
         progress.gone()
         Toast.makeText(context, "Error happened. ${e.message}", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showDetailsDialog(entry: StatisticsEntry) {
+        parentFragmentManager.let { fragmentManager ->
+            StatisticsDialog().apply {
+                setModel(entry)
+                show(fragmentManager)
+            }
+        }
     }
 
     companion object Companion {

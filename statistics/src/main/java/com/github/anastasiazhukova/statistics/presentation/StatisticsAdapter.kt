@@ -81,6 +81,7 @@ class StatisticsAdapter : RecyclerView.Adapter<StatisticsAdapter.StatisticsViewH
                 granularity = 1f
             }
             barDataSet.color = view.context.getColor(R.color.primary)
+            barDataSet.highLightAlpha = 0
             data = BarData(barDataSet)
             animateY(1000)
             invalidate()
