@@ -9,8 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.R
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModel
+import com.github.anastasiazhukova.fitness.domain.water.WaterEntry
+import com.github.anastasiazhukova.fitness.domain.water.WaterModel
 import com.github.anastasiazhukova.fitness.screens.fragments.water.viewmodel.WaterViewModel
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerListener
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerSupport
@@ -36,10 +36,11 @@ class WaterFragment :
     private val addWaterDialogClickListener = object : IAddWaterDialogClickListener {
         override fun onAdded(type: String, amount: Int) {
             //todo
-            val waterEntry = WaterEntry(
-                type = type,
-                amount = amount
-            )
+            val waterEntry =
+                WaterEntry(
+                    type = type,
+                    amount = amount
+                )
 
             waterViewModel.add(waterEntry)
         }

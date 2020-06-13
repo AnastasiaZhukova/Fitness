@@ -3,8 +3,8 @@ package com.github.anastasiazhukova.fitness.screens.fragments.calories.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModel
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModel
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.presentation.CaloriesScreenUiState
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.usecase.ICaloriesUseCase
 import com.github.anastasiazhukova.fitness.utils.Result

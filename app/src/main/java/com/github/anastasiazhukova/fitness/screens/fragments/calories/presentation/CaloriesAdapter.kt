@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.R
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesEntry
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
 import com.google.android.material.textview.MaterialTextView
 
 class CaloriesAdapter : RecyclerView.Adapter<CaloriesAdapter.CaloriesViewHolder>() {

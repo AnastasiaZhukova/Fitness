@@ -2,8 +2,10 @@ package com.github.anastasiazhukova.fitness.utils.extensions
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.os.Parcelable
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.Extra.ACTIVITY_EXTRA
+import com.github.anastasiazhukova.fitness.utils.constants.Constants.Extra.FRAGMENT_EXTRA
 
 fun Context.startActivity(activityClass: Class<*>, extras: Parcelable? = null) {
     val intent = Intent(this, activityClass)
@@ -16,4 +18,12 @@ fun Context.startActivity(activityClass: Class<*>, extras: Parcelable? = null) {
 
 fun <T : Parcelable> Intent.getActivityExtra(): T? {
     return getParcelableExtra<T>(ACTIVITY_EXTRA)
+}
+
+fun <T : Parcelable> Bundle.getFragmentExtra(): T? {
+    return getParcelable(FRAGMENT_EXTRA)
+}
+
+fun <T : Parcelable> Bundle.putFragmentExtra(extra: T) {
+    return putParcelable(FRAGMENT_EXTRA, extra)
 }

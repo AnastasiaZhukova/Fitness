@@ -4,8 +4,8 @@ import android.util.Log
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
 import com.github.anastasiazhukova.fitness.datasource.user.water.IWaterDao
 import com.github.anastasiazhukova.fitness.datasource.user.water.WaterDataModel
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModel
+import com.github.anastasiazhukova.fitness.domain.water.WaterEntry
+import com.github.anastasiazhukova.fitness.domain.water.WaterModel
 import com.github.anastasiazhukova.fitness.utils.IMapper
 import com.github.anastasiazhukova.fitness.utils.extensions.generateId
 import kotlinx.coroutines.Dispatchers

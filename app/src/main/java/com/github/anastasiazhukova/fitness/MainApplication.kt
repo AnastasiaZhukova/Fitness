@@ -9,9 +9,9 @@ import com.github.anastasiazhukova.fitness.screens.activities.workout.WorkoutScr
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.CaloriesScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.login.LoginScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.register.RegisterScreenDependency
-import com.github.anastasiazhukova.fitness.screens.fragments.statistics.StatisticsScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.water.WaterScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.workoutPlan.WorkoutPlanScreenDependency
+import com.github.anastasiazhukova.statistics.StatisticsScreenDependency
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

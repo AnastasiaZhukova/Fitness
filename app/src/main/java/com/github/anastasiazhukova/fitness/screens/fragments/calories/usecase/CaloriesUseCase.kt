@@ -1,8 +1,8 @@
 package com.github.anastasiazhukova.fitness.screens.fragments.calories.usecase
 
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.datasource.ICaloriesDataSource
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModel
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModel
 import com.github.anastasiazhukova.fitness.utils.Result
 
 class CaloriesUseCase(

@@ -4,6 +4,7 @@ include ':fitnessadmin'
 include ':authentication'
 include ':chat'
 include ':datasource'
+include ':statistics'
 include ':uiComponents'
 include ':utils'
 

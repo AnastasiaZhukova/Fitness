@@ -2,8 +2,8 @@ package com.github.anastasiazhukova.fitness.screens.fragments.water
 
 import com.github.anastasiazhukova.fitness.screens.fragments.water.datasource.IWaterDataSource
 import com.github.anastasiazhukova.fitness.screens.fragments.water.datasource.WaterDataSource
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterDataModelMapper
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModelDataMapper
+import com.github.anastasiazhukova.fitness.domain.water.WaterDataModelMapper
+import com.github.anastasiazhukova.fitness.domain.water.WaterModelDataMapper
 import com.github.anastasiazhukova.fitness.screens.fragments.water.presentation.WaterFragment
 import com.github.anastasiazhukova.fitness.screens.fragments.water.usecase.IWaterUseCase
 import com.github.anastasiazhukova.fitness.screens.fragments.water.usecase.WaterUseCase

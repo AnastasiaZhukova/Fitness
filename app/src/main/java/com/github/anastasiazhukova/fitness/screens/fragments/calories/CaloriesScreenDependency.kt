@@ -2,8 +2,8 @@ package com.github.anastasiazhukova.fitness.screens.fragments.calories
 
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.datasource.CaloriesDataSource
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.datasource.ICaloriesDataSource
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesDataModelMapper
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModelDataMapper
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesDataModelMapper
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModelDataMapper
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.presentation.CaloriesFragment
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.usecase.CaloriesUseCase
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.usecase.ICaloriesUseCase

@@ -4,8 +4,8 @@ import android.util.Log
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder
 import com.github.anastasiazhukova.fitness.datasource.user.calories.CaloriesDataModel
 import com.github.anastasiazhukova.fitness.datasource.user.calories.ICaloriesDao
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModel
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModel
 import com.github.anastasiazhukova.fitness.utils.IMapper
 import com.github.anastasiazhukova.fitness.utils.extensions.generateId
 import kotlinx.coroutines.Dispatchers

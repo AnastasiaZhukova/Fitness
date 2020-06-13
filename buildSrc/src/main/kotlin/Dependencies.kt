@@ -55,5 +55,6 @@ object Module {
     const val chat = ":chat"
     const val datasource = ":datasource"
     const val uiComponents = ":uiComponents"
+    const val statistics = ":statistics"
     const val utils = ":utils"
 }

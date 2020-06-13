@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.R
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterEntry
+import com.github.anastasiazhukova.fitness.domain.water.WaterEntry
 import com.google.android.material.textview.MaterialTextView
 
 class WaterAdapter : RecyclerView.Adapter<WaterAdapter.WaterViewHolder>() {

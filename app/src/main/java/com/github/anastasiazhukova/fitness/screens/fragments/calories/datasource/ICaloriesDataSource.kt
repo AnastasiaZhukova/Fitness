@@ -1,7 +1,7 @@
 package com.github.anastasiazhukova.fitness.screens.fragments.calories.datasource
 
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModel
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModel
 
 interface ICaloriesDataSource {
     suspend fun get(date: Long): CaloriesModel?

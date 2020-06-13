@@ -1,6 +1,6 @@
 package com.github.anastasiazhukova.fitness.screens.fragments.calories.presentation
 
-import com.github.anastasiazhukova.fitness.screens.fragments.calories.domain.CaloriesModel
+import com.github.anastasiazhukova.fitness.domain.calories.CaloriesModel
 
 sealed class CaloriesScreenUiState {
     object Loading : CaloriesScreenUiState()

@@ -3,8 +3,8 @@ package com.github.anastasiazhukova.fitness.screens.fragments.water.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterEntry
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModel
+import com.github.anastasiazhukova.fitness.domain.water.WaterEntry
+import com.github.anastasiazhukova.fitness.domain.water.WaterModel
 import com.github.anastasiazhukova.fitness.screens.fragments.water.presentation.WaterScreenUiState
 import com.github.anastasiazhukova.fitness.screens.fragments.water.usecase.IWaterUseCase
 import com.github.anastasiazhukova.fitness.utils.Result

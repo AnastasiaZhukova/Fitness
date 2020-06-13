@@ -1,6 +1,6 @@
 package com.github.anastasiazhukova.fitness.screens.fragments.water.presentation
 
-import com.github.anastasiazhukova.fitness.screens.fragments.water.domain.WaterModel
+import com.github.anastasiazhukova.fitness.domain.water.WaterModel
 
 sealed class WaterScreenUiState {
     object Loading : WaterScreenUiState()
