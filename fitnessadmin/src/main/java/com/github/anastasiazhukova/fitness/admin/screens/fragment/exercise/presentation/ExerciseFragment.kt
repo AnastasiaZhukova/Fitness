@@ -110,6 +110,7 @@ class ExerciseFragment : Fragment(R.layout.fragment_exercise), IExerciseClickLis
 
     private fun setOperationInProgressState() {
         progress.visible()
+        noDataMessage.gone()
     }
 
     private fun setModel(model: List<ExerciseModel>) {
