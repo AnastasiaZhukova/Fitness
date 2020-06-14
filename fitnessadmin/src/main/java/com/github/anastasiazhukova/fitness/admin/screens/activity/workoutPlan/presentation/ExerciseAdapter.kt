@@ -6,14 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.admin.R
 import com.github.anastasiazhukova.fitness.domain.workoutPlan.ExerciseEntry
+import com.github.anastasiazhukova.fitness.uicomponents.ItemMoveCallback
 import com.github.anastasiazhukova.fitness.utils.extensions.toReadableTime
 import com.google.android.material.textview.MaterialTextView
+import java.util.*
 
 interface IExerciseClickListener {
     fun onEditClicked(model: ExerciseEntry)
 }
 
-class ExerciseAdapter : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
+class ExerciseAdapter : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>(),
+    ItemMoveCallback.ItemTouchHelperContract {
 
     private var exerciseClickListener: IExerciseClickListener? = null
 
@@ -40,6 +43,23 @@ class ExerciseAdapter : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>
     fun setExerciseEditClickListener(listener: IExerciseClickListener) {
         exerciseClickListener = listener
     }
+
+    override fun onRowMoved(fromPosition: Int, toPosition: Int) {
+        if (fromPosition < toPosition) {
+            for (i in fromPosition until toPosition) {
+                Collections.swap(items, i, i + 1)
+            }
+        } else {
+            for (i in fromPosition downTo toPosition + 1) {
+                Collections.swap(items, i, i - 1)
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition)
+    }
+
+    override fun onRowSelected(myViewHolder: RecyclerView.ViewHolder?) {}
+
+    override fun onRowClear(myViewHolder: RecyclerView.ViewHolder?) {}
 
     inner class ExerciseViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 

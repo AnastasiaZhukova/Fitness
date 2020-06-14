@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.admin.R
@@ -17,6 +18,7 @@ import com.github.anastasiazhukova.fitness.domain.workoutPlan.WorkoutPlanModel
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerListener
 import com.github.anastasiazhukova.fitness.uicomponents.IDatePickerSupport
 import com.github.anastasiazhukova.fitness.uicomponents.IElementsListListener
+import com.github.anastasiazhukova.fitness.uicomponents.ItemMoveCallback
 import com.github.anastasiazhukova.fitness.utils.SimpleTextWatcher
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.String.EMPTY
 import com.github.anastasiazhukova.fitness.utils.extensions.*
@@ -50,6 +52,9 @@ class WorkoutPlanActivity : AppCompatActivity(R.layout.activity_workout_plan),
 
         elementsView?.apply {
             getItemsList().apply {
+                val itemMoveCallback = ItemMoveCallback(exerciseAdapter)
+                val itemTouchHelper = ItemTouchHelper(itemMoveCallback)
+                itemTouchHelper.attachToRecyclerView(this)
                 exerciseAdapter.setExerciseEditClickListener(this@WorkoutPlanActivity)
                 adapter = exerciseAdapter
                 layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
