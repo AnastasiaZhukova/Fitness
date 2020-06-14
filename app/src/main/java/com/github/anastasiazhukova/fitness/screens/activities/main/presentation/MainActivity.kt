@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.domain.weight.WeightModel
+import com.github.anastasiazhukova.fitness.screens.activities.authentication.AuthenticationActivity
 import com.github.anastasiazhukova.fitness.screens.activities.main.viewmodel.MainViewModel
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.presentation.CaloriesFragment
 import com.github.anastasiazhukova.fitness.screens.fragments.water.presentation.WaterFragment
@@ -36,6 +37,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         initBottomNavigation()
         selectDefaultNavigationItem()
         mainViewModel.weightLiveData.observe(this, weightModelObserver)
+
+        logoutButton.setOnClickListener {
+            mainViewModel.logout()
+            AuthenticationActivity.start(this)
+            finish()
+        }
     }
 
     override fun onResume() {

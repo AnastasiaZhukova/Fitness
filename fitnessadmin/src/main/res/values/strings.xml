@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">FitnessAdmin</string>
 
+    <string name="logout">Logout</string>
+
     <string name="ml">ml</string>
     <string name="kg">kg</string>
     <string name="cal">cal</string>

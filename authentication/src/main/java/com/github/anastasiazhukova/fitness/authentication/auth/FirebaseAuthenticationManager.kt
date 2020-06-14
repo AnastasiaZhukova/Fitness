@@ -36,7 +36,7 @@ class FirebaseAuthenticationManager : IAuthenticationManager {
             Result.Error(e)
         }
 
-    override suspend fun logout(): Result<Boolean> =
+    override fun logout(): Result<Boolean> =
         try {
             auth.signOut()
             Result.Success(true)

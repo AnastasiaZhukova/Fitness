@@ -42,6 +42,7 @@ object MainScreenDependency {
             viewModel {
                 MainViewModel(
                     userIdHolder = get(),
+                    authenticationManager = get(),
                     weightUseCase = get()
                 )
             }

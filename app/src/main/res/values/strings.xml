@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Fitness</string>
 
+    <string name="logout">Logout</string>
+
     <string name="sec">sec</string>
     <string name="min">min</string>
     <string name="cal">cal</string>

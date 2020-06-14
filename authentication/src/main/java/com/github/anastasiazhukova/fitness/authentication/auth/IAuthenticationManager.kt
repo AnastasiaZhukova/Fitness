@@ -10,5 +10,5 @@ interface IAuthenticationManager {
 
     suspend fun register(email: String, password: String): Result<String?>
 
-    suspend fun logout(): Result<Boolean>
+    fun logout(): Result<Boolean>
 }
