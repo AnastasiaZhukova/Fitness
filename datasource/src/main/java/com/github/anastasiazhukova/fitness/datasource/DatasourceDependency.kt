@@ -12,6 +12,8 @@ import com.github.anastasiazhukova.fitness.datasource.user.info.FirebaseUserInfo
 import com.github.anastasiazhukova.fitness.datasource.user.info.IUserInfoDao
 import com.github.anastasiazhukova.fitness.datasource.user.water.FirebaseWaterDao
 import com.github.anastasiazhukova.fitness.datasource.user.water.IWaterDao
+import com.github.anastasiazhukova.fitness.datasource.user.weight.FirebaseWeightDao
+import com.github.anastasiazhukova.fitness.datasource.user.weight.IWeightDao
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.FirebaseWorkoutPlanDao
 import com.github.anastasiazhukova.fitness.datasource.user.workoutPlan.IWorkoutPlanDao
 import org.koin.dsl.module
@@ -20,6 +22,7 @@ object DatasourceDependency {
     val module = module {
         factory<IUserInfoDao> { FirebaseUserInfoDao() }
         factory<IWaterDao> { FirebaseWaterDao() }
+        factory<IWeightDao> { FirebaseWeightDao() }
         factory<ICaloriesDao> { FirebaseCaloriesDao() }
         factory<IWorkoutPlanDao> { FirebaseWorkoutPlanDao() }
         factory<ITrainerInfoDao> { FirebaseTrainerInfoDao() }

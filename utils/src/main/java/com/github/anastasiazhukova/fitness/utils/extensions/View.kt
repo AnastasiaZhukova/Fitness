@@ -47,3 +47,11 @@ fun EditText?.asInt(): Int {
 
     return -1
 }
+
+fun EditText?.asFloat(): Float {
+    this?.text?.toString()?.takeIf { it.isNotEmpty() }?.let {
+        return it.toFloat()
+    }
+
+    return -1.0f
+}

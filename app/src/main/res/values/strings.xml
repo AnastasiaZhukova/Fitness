@@ -89,6 +89,9 @@
     <string name="add_water_entry_dialog_coffee">Coffee</string>
     <string name="add_water_entry_dialog_milk">Milk</string>
 
+    <string name="add_weight_entry_dialog_title">Add weight</string>
+    <string name="add_weight_entry_dialog_hint">Value (kg)</string>
+
 
     <string name="add_calories_entry_dialog_title">Add entry</string>
     <string name="add_calories_entry_edit_dialog_title">Edit entry</string>

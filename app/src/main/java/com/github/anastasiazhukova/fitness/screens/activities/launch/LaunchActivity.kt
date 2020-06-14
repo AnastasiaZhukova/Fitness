@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.authentication.auth.IAuthenticationManager
 import com.github.anastasiazhukova.fitness.screens.activities.authentication.AuthenticationActivity
-import com.github.anastasiazhukova.fitness.screens.activities.main.MainActivity
+import com.github.anastasiazhukova.fitness.screens.activities.main.presentation.MainActivity
 import org.koin.android.ext.android.inject
 
 class LaunchActivity : AppCompatActivity(R.layout.activity_launch) {

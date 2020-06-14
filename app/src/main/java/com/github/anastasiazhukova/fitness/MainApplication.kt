@@ -4,6 +4,7 @@ import android.app.Application
 import com.github.anastasiazhukova.fitness.authentication.AuthenticationDependency
 import com.github.anastasiazhukova.fitness.chat.ChatScreenDependency
 import com.github.anastasiazhukova.fitness.datasource.DatasourceDependency
+import com.github.anastasiazhukova.fitness.screens.activities.main.MainScreenDependency
 
 import com.github.anastasiazhukova.fitness.screens.activities.workout.WorkoutScreenDependency
 import com.github.anastasiazhukova.fitness.screens.fragments.calories.CaloriesScreenDependency
@@ -25,6 +26,7 @@ class MainApplication : Application() {
             modules(
                 AuthenticationDependency.module,
                 LoginScreenDependency.module,
+                MainScreenDependency.module,
                 RegisterScreenDependency.module,
 
                 WaterScreenDependency.module,

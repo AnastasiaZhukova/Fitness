@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.github.anastasiazhukova.fitness.R
-import com.github.anastasiazhukova.fitness.screens.activities.main.MainActivity
+import com.github.anastasiazhukova.fitness.screens.activities.main.presentation.MainActivity
 import com.github.anastasiazhukova.fitness.screens.fragments.register.viewmodel.RegisterViewModel
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.Authentication.MIN_PASSWORD_LENGTH
 import com.github.anastasiazhukova.fitness.utils.constants.Constants.FitnessLevel.HARD

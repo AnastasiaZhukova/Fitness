@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.github.anastasiazhukova.fitness.R
-import com.github.anastasiazhukova.fitness.screens.activities.main.MainActivity
+import com.github.anastasiazhukova.fitness.screens.activities.main.presentation.MainActivity
 import com.github.anastasiazhukova.fitness.screens.fragments.login.viewmodel.LoginViewModel
 import com.github.anastasiazhukova.fitness.utils.extensions.*
 import kotlinx.android.synthetic.main.fragment_login.*
