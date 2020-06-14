@@ -65,6 +65,26 @@ class WaterDataSource(
             waterModel
         }
 
+    override suspend fun update(waterModel: WaterModel, waterEntry: WaterEntry): WaterModel =
+        withContext(Dispatchers.IO) {
+            userIdHolder.getCurrentUserId()?.let { userId ->
+                val oldEntries = waterModel.entries
+                val indexOfEntry = oldEntries.indexOfFirst { it.id == waterEntry.id }
+
+                val newEntries = oldEntries.toMutableList().apply {
+                    set(indexOfEntry, waterEntry)
+                }
+                val newModel = waterModel.copy(entries = newEntries)
+                val mappedModel = waterModelDataMapper.invoke(newModel)
+
+                waterDao.update(userId, mappedModel)
+
+                return@withContext newModel
+            }
+
+            waterModel
+        }
+
 
     override suspend fun delete(waterModel: WaterModel, waterEntry: WaterEntry): WaterModel =
         withContext(Dispatchers.IO) {

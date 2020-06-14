@@ -53,6 +53,17 @@ class CaloriesViewModel(
         }
     }
 
+    fun update(caloriesEntry: CaloriesEntry) {
+        coroutineScope.launch {
+            caloriesModel?.let {
+                _caloriesLiveData.value = CaloriesScreenUiState.OperationInProgress
+                val result = caloriesUseCase.update(it, caloriesEntry)
+
+                pushResult(result)
+            }
+        }
+    }
+
     fun delete(caloriesEntry: CaloriesEntry) {
         coroutineScope.launch {
             caloriesModel?.let {

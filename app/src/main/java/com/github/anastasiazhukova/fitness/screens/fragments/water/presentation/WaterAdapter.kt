@@ -8,7 +8,13 @@ import com.github.anastasiazhukova.fitness.R
 import com.github.anastasiazhukova.fitness.domain.water.WaterEntry
 import com.google.android.material.textview.MaterialTextView
 
+interface IWaterClickListener {
+    fun onEditClicked(model: WaterEntry)
+}
+
 class WaterAdapter : RecyclerView.Adapter<WaterAdapter.WaterViewHolder>() {
+
+    private var waterClickListener: IWaterClickListener? = null
 
     var items: List<WaterEntry> = emptyList()
         set(value) {
@@ -31,13 +37,23 @@ class WaterAdapter : RecyclerView.Adapter<WaterAdapter.WaterViewHolder>() {
         holder.bind(items[position])
     }
 
+    fun setWaterClickListener(listener: IWaterClickListener) {
+        waterClickListener = listener
+    }
+
     inner class WaterViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+
+        private val mlLabel = view.context.resources.getString(R.string.ml)
 
         fun bind(model: WaterEntry) {
             val type = view.findViewById<MaterialTextView>(R.id.type)
             val amount = view.findViewById<MaterialTextView>(R.id.amount)
             type.text = "${model.type}"
-            amount.text = "${model.amount} ml"
+            amount.text = "${model.amount} $mlLabel"
+
+            view.setOnClickListener {
+                waterClickListener?.onEditClicked(model)
+            }
         }
     }
 }

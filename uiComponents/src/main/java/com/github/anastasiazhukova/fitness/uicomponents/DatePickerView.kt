@@ -58,7 +58,11 @@ class DatePickerView @JvmOverloads constructor(
 
     private fun showDatePicker() {
         datePickerSupport?.getFragmentManagerForDatePicker()?.let { fragmentManager ->
-            picker.show(fragmentManager, TAG)
+            val previousDialog = fragmentManager.findFragmentByTag(TAG)
+
+            if (previousDialog == null) {
+                picker.show(fragmentManager, TAG)
+            }
         }
     }
 }

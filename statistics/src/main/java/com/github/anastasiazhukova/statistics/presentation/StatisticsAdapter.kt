@@ -80,6 +80,8 @@ class StatisticsAdapter : RecyclerView.Adapter<StatisticsAdapter.StatisticsViewH
                 setDrawGridLines(false)
                 granularity = 1f
             }
+            axisLeft.granularity = 10f
+            axisRight.granularity = 10f
             barDataSet.color = view.context.getColor(R.color.primary)
             barDataSet.highLightAlpha = 0
             data = BarData(barDataSet)

@@ -26,14 +26,15 @@ class CaloriesFragment :
     Fragment(R.layout.fragment_calories),
     IDatePickerSupport,
     IDatePickerListener,
-    IElementsListListener {
+    IElementsListListener,
+    ICaloriesClickListener {
 
     private val caloriesViewModel: CaloriesViewModel by lifecycleScope.viewModel(this)
     private val caloriesAdapter = CaloriesAdapter()
     private val caloriesModelObserver = Observer<CaloriesScreenUiState> {
         updateUi(it)
     }
-    private val addWaterDialogClickListener = object : IAddCaloriesDialogClickListener {
+    private val addWaterDialogClickListener = object : IEditCaloriesDialogClickListener {
 
         override fun onAdded(name: String, calories: Int, weight: Int) {
             val caloriesEntry =
@@ -45,10 +46,26 @@ class CaloriesFragment :
 
             caloriesViewModel.add(caloriesEntry)
         }
+
+        override fun onEdited(model: CaloriesEntry, name: String, calories: Int, weight: Int) {
+            val newEntry = model.copy(
+                name = name,
+                calories = calories,
+                weight = weight
+            )
+
+            caloriesViewModel.update(newEntry)
+        }
+
+        override fun onDeleted(model: CaloriesEntry) {
+            caloriesViewModel.delete(model)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        caloriesAdapter.setCaloriesClickListener(this)
 
         elementsView?.apply {
             getItemsList().apply {
@@ -75,9 +92,18 @@ class CaloriesFragment :
     override fun onDatePicked(date: Long) = caloriesViewModel.get(date)
 
     override fun onAddButtonClicked() {
+        showCaloriesDialog()
+    }
+
+    override fun onEditClicked(model: CaloriesEntry) {
+        showCaloriesDialog(model)
+    }
+
+    private fun showCaloriesDialog(model: CaloriesEntry? = null) {
         parentFragmentManager.let { fragmentManager ->
-            AddCaloriesEntryDialog().apply {
+            AddOrEditCaloriesEntryDialog().apply {
                 setListener(addWaterDialogClickListener)
+                model?.let { setModel(it) }
                 show(fragmentManager)
             }
         }

@@ -65,8 +65,31 @@ class CaloriesDataSource(
             caloriesModel
         }
 
+    override suspend fun update(caloriesModel: CaloriesModel, caloriesEntry: CaloriesEntry): CaloriesModel =
+        withContext(Dispatchers.IO) {
+            userIdHolder.getCurrentUserId()?.let { userId ->
+                val oldEntries = caloriesModel.entries
+                val indexOfEntry = oldEntries.indexOfFirst { it.id == caloriesEntry.id }
 
-    override suspend fun delete(caloriesModel: CaloriesModel, caloriesEntry: CaloriesEntry): CaloriesModel =
+                val newEntries = oldEntries.toMutableList().apply {
+                    set(indexOfEntry, caloriesEntry)
+                }
+                val newModel = caloriesModel.copy(entries = newEntries)
+                val mappedModel = caloriesModelDataMapper.invoke(newModel)
+
+                caloriesDao.update(userId, mappedModel)
+
+                return@withContext newModel
+            }
+
+            caloriesModel
+        }
+
+
+    override suspend fun delete(
+        caloriesModel: CaloriesModel,
+        caloriesEntry: CaloriesEntry
+    ): CaloriesModel =
         withContext(Dispatchers.IO) {
             userIdHolder.getCurrentUserId()?.let { userId ->
                 val newEntries =

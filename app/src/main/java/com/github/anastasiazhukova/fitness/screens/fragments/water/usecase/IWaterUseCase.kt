@@ -7,5 +7,6 @@ import com.github.anastasiazhukova.fitness.utils.Result
 interface IWaterUseCase {
     suspend fun get(date: Long): Result<WaterModel?>
     suspend fun add(waterModel: WaterModel, waterEntry: WaterEntry): Result<WaterModel>
+    suspend fun update(waterModel: WaterModel, waterEntry: WaterEntry): Result<WaterModel>
     suspend fun delete(waterModel: WaterModel, waterEntry: WaterEntry): Result<WaterModel>
 }

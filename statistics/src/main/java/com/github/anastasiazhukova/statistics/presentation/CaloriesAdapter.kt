@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.anastasiazhukova.fitness.domain.calories.CaloriesEntry
+import com.github.anastasiazhukova.fitness.utils.extensions.calculateCalories
 import com.github.anastasiazhukova.statistics.R
 import com.google.android.material.textview.MaterialTextView
 
@@ -41,7 +42,8 @@ class CaloriesAdapter : RecyclerView.Adapter<CaloriesAdapter.CaloriesViewHolder>
             val amount = view.findViewById<MaterialTextView>(R.id.amount)
 
             type.text = model.name
-            amount.text = "${model.calories} $caloriesLabel"
+            val cal = calculateCalories(model.weight, model.calories)
+            amount.text = "$cal $caloriesLabel"
         }
     }
 }

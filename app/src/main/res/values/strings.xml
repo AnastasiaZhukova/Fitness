@@ -3,6 +3,8 @@
 
     <string name="sec">sec</string>
     <string name="min">min</string>
+    <string name="cal">cal</string>
+    <string name="ml">ml</string>
 
     <string name="workout_section_label">Your today\'s workout</string>
     <string name="workout_duration_label">Duration - %1s</string>
@@ -89,11 +91,13 @@
 
 
     <string name="add_calories_entry_dialog_title">Add entry</string>
+    <string name="add_calories_entry_edit_dialog_title">Edit entry</string>
     <string name="add_calories_entry_dialog_name_hint">Name</string>
     <string name="add_calories_entry_dialog_weight_hint">Amount (g)</string>
     <string name="add_calories_entry_dialog_calories_hint">Calories (per 100 g)</string>
     <string name="add_calories_entry_dialog_save">Save</string>
     <string name="add_calories_entry_dialog_cancel">Cancel</string>
+    <string name="add_calories_entry_dialog_delete">Delete</string>
 
     <string name="workout_get_ready">Get ready!</string>
     <string name="workout_pause">Pause</string>

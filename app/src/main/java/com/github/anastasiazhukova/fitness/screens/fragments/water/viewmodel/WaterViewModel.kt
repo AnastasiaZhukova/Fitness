@@ -53,6 +53,17 @@ class WaterViewModel(
         }
     }
 
+    fun update(waterEntry: WaterEntry) {
+        coroutineScope.launch {
+            waterModel?.let {
+                _waterLiveData.value = WaterScreenUiState.OperationInProgress
+                val result = waterUseCase.update(it, waterEntry)
+
+                pushResult(result)
+            }
+        }
+    }
+
     fun delete(waterEntry: WaterEntry) {
         coroutineScope.launch {
             waterModel?.let {

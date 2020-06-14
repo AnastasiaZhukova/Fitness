@@ -26,16 +26,16 @@ class WaterFragment :
     Fragment(R.layout.fragment_water),
     IDatePickerSupport,
     IDatePickerListener,
-    IElementsListListener {
+    IElementsListListener,
+    IWaterClickListener {
 
     private val waterViewModel: WaterViewModel by lifecycleScope.viewModel(this)
     private val waterAdapter = WaterAdapter()
     private val waterModelObserver = Observer<WaterScreenUiState> {
         updateUi(it)
     }
-    private val addWaterDialogClickListener = object : IAddWaterDialogClickListener {
+    private val addWaterDialogClickListener = object : IWaterDialogClickListener {
         override fun onAdded(type: String, amount: Int) {
-            //todo
             val waterEntry =
                 WaterEntry(
                     type = type,
@@ -44,10 +44,25 @@ class WaterFragment :
 
             waterViewModel.add(waterEntry)
         }
+
+        override fun onEdited(model: WaterEntry, type: String, amount: Int) {
+            val waterEntry = model.copy(
+                type = type,
+                amount = amount
+            )
+
+            waterViewModel.update(waterEntry)
+        }
+
+        override fun onDeleted(model: WaterEntry) {
+            waterViewModel.delete(model)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        waterAdapter.setWaterClickListener(this)
 
         elementsView?.apply {
             getItemsList().apply {
@@ -74,8 +89,19 @@ class WaterFragment :
     override fun onDatePicked(date: Long) = waterViewModel.get(date)
 
     override fun onAddButtonClicked() {
+        showWaterDialog()
+    }
+
+    override fun onEditClicked(model: WaterEntry) {
+        showWaterDialog(model)
+    }
+
+    private fun showWaterDialog(model: WaterEntry? = null) {
         parentFragmentManager.let { fragmentManager ->
-            AddWaterEntryDialog().apply {
+            AddOrEditWaterEntryDialog().apply {
+                model?.let {
+                    setModel(it)
+                }
                 setListener(addWaterDialogClickListener)
                 show(fragmentManager)
             }

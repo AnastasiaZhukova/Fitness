@@ -28,6 +28,18 @@ class WaterUseCase(
             Result.Error(e)
         }
 
+    override suspend fun update(
+        waterModel: WaterModel,
+        waterEntry: WaterEntry
+    ): Result<WaterModel> =
+        try {
+            val model = waterDataSource.update(waterModel, waterEntry)
+            Result.Success(model)
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+
+
     override suspend fun delete(
         waterModel: WaterModel,
         waterEntry: WaterEntry

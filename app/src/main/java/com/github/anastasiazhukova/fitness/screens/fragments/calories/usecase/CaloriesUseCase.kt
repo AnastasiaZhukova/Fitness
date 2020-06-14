@@ -28,6 +28,17 @@ class CaloriesUseCase(
             Result.Error(e)
         }
 
+    override suspend fun update(
+        caloriesModel: CaloriesModel,
+        caloriesEntry: CaloriesEntry
+    ): Result<CaloriesModel> =
+        try {
+            val model = caloriesDataSource.update(caloriesModel, caloriesEntry)
+            Result.Success(model)
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+
     override suspend fun delete(
         caloriesModel: CaloriesModel,
         caloriesEntry: CaloriesEntry
