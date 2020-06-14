@@ -1,4 +1,4 @@
-package com.github.anastasiazhukova.fitness.screens.activities.main.datasource
+package com.github.anastasiazhukova.fitness.screens.activities.main.datasource.weight
 
 import android.util.Log
 import com.github.anastasiazhukova.fitness.authentication.user.IUserIdHolder

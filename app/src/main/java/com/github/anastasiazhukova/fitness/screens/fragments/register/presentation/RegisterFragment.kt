@@ -133,7 +133,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             trainerNickname = trainerNickname.getTextAsString(),
             gender = getGenderValue(),
             height = height.asInt(),
-            weight = weight.asInt(),
+            weight = weight.asFloat(),
             fitnessLevel = getFitnessLevelValue(),
             goalCalories = goalCalories.asInt(),
             goalWater = goalWater.asInt()

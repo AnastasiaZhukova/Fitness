@@ -2,8 +2,10 @@ package com.github.anastasiazhukova.fitness.screens.activities.main
 
 import com.github.anastasiazhukova.fitness.domain.weight.WeightDataModelMapper
 import com.github.anastasiazhukova.fitness.domain.weight.WeightModelDataMapper
-import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.IWeightDataSource
-import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.WeightDataSource
+import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.userInfo.IUserInfoDataSource
+import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.userInfo.UserInfoDataSource
+import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.weight.IWeightDataSource
+import com.github.anastasiazhukova.fitness.screens.activities.main.datasource.weight.WeightDataSource
 import com.github.anastasiazhukova.fitness.screens.activities.main.presentation.MainActivity
 import com.github.anastasiazhukova.fitness.screens.activities.main.usecase.IWeightUseCase
 import com.github.anastasiazhukova.fitness.screens.activities.main.usecase.WeightUseCase
@@ -23,9 +25,17 @@ object MainScreenDependency {
                 )
             }
 
+            scoped<IUserInfoDataSource> {
+                UserInfoDataSource(
+                    userIdHolder = get(),
+                    userInfoDao = get()
+                )
+            }
+
             scoped<IWeightUseCase> {
                 WeightUseCase(
-                    weightDataSource = get()
+                    weightDataSource = get(),
+                    userInfoDataSource = get()
                 )
             }
 

@@ -45,7 +45,7 @@ data class UserParams(
     val height: Int = -1,
 
     @SerializedName(WEIGHT)
-    val weight: Int = -1,
+    val weight: Float = -1.0f,
 
     @SerializedName(FITNESS_LEVEL)
     val fitnessLevel: Int = -1

@@ -10,7 +10,7 @@ data class ClientDetailsParams(
     val trainerNickname: String,
     val gender: Boolean,
     val height: Int?,
-    val weight: Int?,
+    val weight: Float?,
     val fitnessLevel: Int?,
     val goalCalories: Int?,
     val goalWater: Int?,
