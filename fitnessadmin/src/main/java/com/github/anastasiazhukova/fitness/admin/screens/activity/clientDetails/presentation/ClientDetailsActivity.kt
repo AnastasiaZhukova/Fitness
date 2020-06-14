@@ -43,7 +43,7 @@ class ClientDetailsActivity : AppCompatActivity(R.layout.activity_client_details
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.statisticsContainer,
-                StatisticsFragment.newInstance(StatisticsPageParams(clientDetailsParams.id, false))
+                StatisticsFragment.newInstance(StatisticsPageParams(clientDetailsParams.id))
             )
             .commit()
 

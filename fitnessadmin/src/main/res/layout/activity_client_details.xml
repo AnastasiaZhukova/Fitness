@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="16dp"
-    android:paddingTop="16dp"
-    android:paddingEnd="16dp">
+    android:paddingTop="16dp">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/clientName"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         style="@style/SectionLabelTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         android:text="@string/client_details_manage_workout_plan"
         app:layout_constraintBottom_toTopOf="@id/splitter"
         app:layout_constraintEnd_toStartOf="@id/chatButton"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/clientName"
         app:layout_constraintTop_toBottomOf="@id/weightText" />
 
     <com.google.android.material.button.MaterialButton
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:text="@string/client_details_chat"
         app:layout_constraintBottom_toBottomOf="@id/manageWorkoutPlanButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/clientName"
         app:layout_constraintStart_toEndOf="@id/manageWorkoutPlanButton"
         app:layout_constraintTop_toTopOf="@id/manageWorkoutPlanButton" />
 
