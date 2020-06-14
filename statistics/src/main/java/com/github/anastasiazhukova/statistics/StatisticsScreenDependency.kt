@@ -7,7 +7,7 @@ import com.github.anastasiazhukova.statistics.datasource.calories.ICaloriesStati
 import com.github.anastasiazhukova.statistics.datasource.water.IWaterStatisticsRepository
 import com.github.anastasiazhukova.statistics.datasource.water.WaterStatisticsRepository
 import com.github.anastasiazhukova.statistics.datasource.weight.IWeightStatisticsRepository
-import com.github.anastasiazhukova.statistics.datasource.weight.StubWeightStatisticsRepository
+import com.github.anastasiazhukova.statistics.datasource.weight.WeightStatisticsRepository
 import com.github.anastasiazhukova.statistics.presentation.StatisticsFragment
 import com.github.anastasiazhukova.statistics.usecase.IStatisticsUseCase
 import com.github.anastasiazhukova.statistics.usecase.StatisticsUseCase
@@ -24,7 +24,11 @@ object StatisticsScreenDependency {
                     caloriesDataModelMapper = CaloriesDataModelMapper()
                 )
             }
-            scoped<IWeightStatisticsRepository> { StubWeightStatisticsRepository() }
+            scoped<IWeightStatisticsRepository> {
+                WeightStatisticsRepository(
+                    weightDao = get()
+                )
+            }
             scoped<IWaterStatisticsRepository> {
                 WaterStatisticsRepository(
                     waterDao = get(),
